@@ -1,0 +1,46 @@
+# Systèmes courants
+.DS_Store
+Thumbs.db
+
+# Visual Studio
+.vscode/
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.pdb
+*.cache
+*.ilk
+*.log
+*.obj
+*.tlb
+*.tli
+*.tlh
+*.bak
+*.log
+*.sln.docstates
+
+# Dossiers de build
+bin/
+obj/
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Mono
+*.pidb
+*.booproj
+*.userprefs
+
+# Fichiers de configuration locaux
+*.swp
+*.swo
+*.tmp
+*.temp
+*.sln.ide.*
