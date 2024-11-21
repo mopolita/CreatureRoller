@@ -18,9 +18,9 @@ namespace CreatureRoller
         }
     }
 
-    class Roller
+    public static class Dice
     {
-        public static int DiceRoll(int nb, int faces, int mod = 0)
+        public static int Roll(int nb, int faces, int mod = 0)
         {
             Random random = new Random();
             int total = mod;
