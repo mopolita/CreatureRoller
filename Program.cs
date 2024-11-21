@@ -1,4 +1,7 @@
-namespace StatGeneratorForCallofCthulhu7e
+using System;
+using System.Xml.Linq;
+
+namespace CreatureRoller
 {
     internal static class Program
     {
@@ -13,5 +16,19 @@ namespace StatGeneratorForCallofCthulhu7e
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+    }
+
+    class Roller
+    {
+        public static int DiceRoll(int nb, int faces, int mod = 0)
+        {
+            Random random = new Random();
+            int total = mod;
+            for (int i = 0; i < nb; i++)
+            {
+                total += random.Next(1, faces + 1);
+            }
+            return total;
+        }    
     }
 }
