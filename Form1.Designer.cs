@@ -1,6 +1,6 @@
 ﻿namespace CreatureRoller
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            textBox7 = new TextBox();
+            boutonCharger = new Button();
+            boutonSauver = new Button();
+            comboFor = new ComboBox();
+            textNbFor = new TextBox();
+            boutonGenerer = new Button();
+            textModFor = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox2 = new ComboBox();
+            textModCon = new TextBox();
+            textNbCon = new TextBox();
+            comboCon = new ComboBox();
             label3 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox3 = new ComboBox();
+            textModApp = new TextBox();
+            textNbApp = new TextBox();
+            comboApp = new ComboBox();
             label4 = new Label();
-            textBox6 = new TextBox();
-            textBox8 = new TextBox();
-            comboBox4 = new ComboBox();
+            textModDex = new TextBox();
+            textNbDex = new TextBox();
+            comboDex = new ComboBox();
             label5 = new Label();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            comboBox5 = new ComboBox();
+            textModPou = new TextBox();
+            textNbPou = new TextBox();
+            comboPou = new ComboBox();
             label6 = new Label();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            comboBox6 = new ComboBox();
+            textModEdu = new TextBox();
+            textNbEdu = new TextBox();
+            comboEdu = new ComboBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -63,57 +63,56 @@
             label12 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // boutonCharger
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 56);
-            button1.TabIndex = 0;
-            button1.Text = "Charger un fichier";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            boutonCharger.Location = new Point(12, 12);
+            boutonCharger.Name = "boutonCharger";
+            boutonCharger.Size = new Size(126, 56);
+            boutonCharger.TabIndex = 0;
+            boutonCharger.Text = "Charger un fichier";
+            boutonCharger.UseVisualStyleBackColor = true;
+            boutonCharger.Click += boutonCharger_Click;
             // 
-            // button2
+            // boutonSauver
             // 
-            button2.Location = new Point(653, 15);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 53);
-            button2.TabIndex = 1;
-            button2.Text = "Sauvegarder un modèle";
-            button2.UseVisualStyleBackColor = true;
+            boutonSauver.Location = new Point(653, 15);
+            boutonSauver.Name = "boutonSauver";
+            boutonSauver.Size = new Size(135, 53);
+            boutonSauver.TabIndex = 1;
+            boutonSauver.Text = "Sauvegarder un modèle";
+            boutonSauver.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboFor
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(188, 112);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(50, 28);
-            comboBox1.TabIndex = 2;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboFor.FormattingEnabled = true;
+            comboFor.Location = new Point(188, 112);
+            comboFor.Name = "comboFor";
+            comboFor.Size = new Size(50, 28);
+            comboFor.TabIndex = 2;
             // 
-            // textBox1
+            // textNbFor
             // 
-            textBox1.Location = new Point(136, 112);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(46, 27);
-            textBox1.TabIndex = 7;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textNbFor.Location = new Point(136, 112);
+            textNbFor.Name = "textNbFor";
+            textNbFor.Size = new Size(46, 27);
+            textNbFor.TabIndex = 7;
             // 
-            // button3
+            // boutonGenerer
             // 
-            button3.Location = new Point(298, 444);
-            button3.Name = "button3";
-            button3.Size = new Size(180, 29);
-            button3.TabIndex = 18;
-            button3.Text = "Générer les statisiques";
-            button3.UseVisualStyleBackColor = true;
+            boutonGenerer.Location = new Point(298, 444);
+            boutonGenerer.Name = "boutonGenerer";
+            boutonGenerer.Size = new Size(180, 29);
+            boutonGenerer.TabIndex = 18;
+            boutonGenerer.Text = "Générer les statisiques";
+            boutonGenerer.UseVisualStyleBackColor = true;
+            boutonGenerer.Click += boutonGenerer_Click;
             // 
-            // textBox7
+            // textModFor
             // 
-            textBox7.Location = new Point(265, 112);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(31, 27);
-            textBox7.TabIndex = 19;
+            textModFor.Location = new Point(265, 112);
+            textModFor.Name = "textModFor";
+            textModFor.Size = new Size(31, 27);
+            textModFor.TabIndex = 19;
             // 
             // label1
             // 
@@ -133,27 +132,27 @@
             label2.TabIndex = 29;
             label2.Text = "+";
             // 
-            // textBox2
+            // textModCon
             // 
-            textBox2.Location = new Point(265, 228);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(31, 27);
-            textBox2.TabIndex = 28;
+            textModCon.Location = new Point(265, 228);
+            textModCon.Name = "textModCon";
+            textModCon.Size = new Size(31, 27);
+            textModCon.TabIndex = 28;
             // 
-            // textBox3
+            // textNbCon
             // 
-            textBox3.Location = new Point(136, 228);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(46, 27);
-            textBox3.TabIndex = 27;
+            textNbCon.Location = new Point(136, 228);
+            textNbCon.Name = "textNbCon";
+            textNbCon.Size = new Size(46, 27);
+            textNbCon.TabIndex = 27;
             // 
-            // comboBox2
+            // comboCon
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(188, 228);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(50, 28);
-            comboBox2.TabIndex = 26;
+            comboCon.FormattingEnabled = true;
+            comboCon.Location = new Point(188, 228);
+            comboCon.Name = "comboCon";
+            comboCon.Size = new Size(50, 28);
+            comboCon.TabIndex = 26;
             // 
             // label3
             // 
@@ -164,27 +163,27 @@
             label3.TabIndex = 33;
             label3.Text = "+";
             // 
-            // textBox4
+            // textModApp
             // 
-            textBox4.Location = new Point(265, 333);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(31, 27);
-            textBox4.TabIndex = 32;
+            textModApp.Location = new Point(265, 333);
+            textModApp.Name = "textModApp";
+            textModApp.Size = new Size(31, 27);
+            textModApp.TabIndex = 32;
             // 
-            // textBox5
+            // textNbApp
             // 
-            textBox5.Location = new Point(136, 333);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(46, 27);
-            textBox5.TabIndex = 31;
+            textNbApp.Location = new Point(136, 333);
+            textNbApp.Name = "textNbApp";
+            textNbApp.Size = new Size(46, 27);
+            textNbApp.TabIndex = 31;
             // 
-            // comboBox3
+            // comboApp
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(188, 333);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(50, 28);
-            comboBox3.TabIndex = 30;
+            comboApp.FormattingEnabled = true;
+            comboApp.Location = new Point(188, 333);
+            comboApp.Name = "comboApp";
+            comboApp.Size = new Size(50, 28);
+            comboApp.TabIndex = 30;
             // 
             // label4
             // 
@@ -195,27 +194,27 @@
             label4.TabIndex = 37;
             label4.Text = "+";
             // 
-            // textBox6
+            // textModDex
             // 
-            textBox6.Location = new Point(616, 109);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(31, 27);
-            textBox6.TabIndex = 36;
+            textModDex.Location = new Point(616, 109);
+            textModDex.Name = "textModDex";
+            textModDex.Size = new Size(31, 27);
+            textModDex.TabIndex = 36;
             // 
-            // textBox8
+            // textNbDex
             // 
-            textBox8.Location = new Point(487, 109);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(46, 27);
-            textBox8.TabIndex = 35;
+            textNbDex.Location = new Point(487, 109);
+            textNbDex.Name = "textNbDex";
+            textNbDex.Size = new Size(46, 27);
+            textNbDex.TabIndex = 35;
             // 
-            // comboBox4
+            // comboDex
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(539, 109);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(50, 28);
-            comboBox4.TabIndex = 34;
+            comboDex.FormattingEnabled = true;
+            comboDex.Location = new Point(539, 109);
+            comboDex.Name = "comboDex";
+            comboDex.Size = new Size(50, 28);
+            comboDex.TabIndex = 34;
             // 
             // label5
             // 
@@ -226,27 +225,27 @@
             label5.TabIndex = 41;
             label5.Text = "+";
             // 
-            // textBox9
+            // textModPou
             // 
-            textBox9.Location = new Point(616, 229);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(31, 27);
-            textBox9.TabIndex = 40;
+            textModPou.Location = new Point(616, 229);
+            textModPou.Name = "textModPou";
+            textModPou.Size = new Size(31, 27);
+            textModPou.TabIndex = 40;
             // 
-            // textBox10
+            // textNbPou
             // 
-            textBox10.Location = new Point(487, 229);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(46, 27);
-            textBox10.TabIndex = 39;
+            textNbPou.Location = new Point(487, 229);
+            textNbPou.Name = "textNbPou";
+            textNbPou.Size = new Size(46, 27);
+            textNbPou.TabIndex = 39;
             // 
-            // comboBox5
+            // comboPou
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(539, 229);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(50, 28);
-            comboBox5.TabIndex = 38;
+            comboPou.FormattingEnabled = true;
+            comboPou.Location = new Point(539, 229);
+            comboPou.Name = "comboPou";
+            comboPou.Size = new Size(50, 28);
+            comboPou.TabIndex = 38;
             // 
             // label6
             // 
@@ -257,27 +256,27 @@
             label6.TabIndex = 45;
             label6.Text = "+";
             // 
-            // textBox11
+            // textModEdu
             // 
-            textBox11.Location = new Point(616, 333);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(31, 27);
-            textBox11.TabIndex = 44;
+            textModEdu.Location = new Point(616, 333);
+            textModEdu.Name = "textModEdu";
+            textModEdu.Size = new Size(31, 27);
+            textModEdu.TabIndex = 44;
             // 
-            // textBox12
+            // textNbEdu
             // 
-            textBox12.Location = new Point(487, 333);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(46, 27);
-            textBox12.TabIndex = 43;
+            textNbEdu.Location = new Point(487, 333);
+            textNbEdu.Name = "textNbEdu";
+            textNbEdu.Size = new Size(46, 27);
+            textNbEdu.TabIndex = 43;
             // 
-            // comboBox6
+            // comboEdu
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(539, 333);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(50, 28);
-            comboBox6.TabIndex = 42;
+            comboEdu.FormattingEnabled = true;
+            comboEdu.Location = new Point(539, 333);
+            comboEdu.Name = "comboEdu";
+            comboEdu.Size = new Size(50, 28);
+            comboEdu.TabIndex = 42;
             // 
             // label7
             // 
@@ -333,7 +332,7 @@
             label12.TabIndex = 51;
             label12.Text = "Education";
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -345,68 +344,67 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(textBox11);
-            Controls.Add(textBox12);
-            Controls.Add(comboBox6);
+            Controls.Add(textModEdu);
+            Controls.Add(textNbEdu);
+            Controls.Add(comboEdu);
             Controls.Add(label5);
-            Controls.Add(textBox9);
-            Controls.Add(textBox10);
-            Controls.Add(comboBox5);
+            Controls.Add(textModPou);
+            Controls.Add(textNbPou);
+            Controls.Add(comboPou);
             Controls.Add(label4);
-            Controls.Add(textBox6);
-            Controls.Add(textBox8);
-            Controls.Add(comboBox4);
+            Controls.Add(textModDex);
+            Controls.Add(textNbDex);
+            Controls.Add(comboDex);
             Controls.Add(label3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox5);
-            Controls.Add(comboBox3);
+            Controls.Add(textModApp);
+            Controls.Add(textNbApp);
+            Controls.Add(comboApp);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
-            Controls.Add(comboBox2);
+            Controls.Add(textModCon);
+            Controls.Add(textNbCon);
+            Controls.Add(comboCon);
             Controls.Add(label1);
-            Controls.Add(textBox7);
-            Controls.Add(button3);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Name = "Form1";
+            Controls.Add(textModFor);
+            Controls.Add(boutonGenerer);
+            Controls.Add(textNbFor);
+            Controls.Add(comboFor);
+            Controls.Add(boutonSauver);
+            Controls.Add(boutonCharger);
+            Name = "MainForm";
             Text = "Lovecraftian Creature Roller";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private Button button3;
-        private TextBox textBox7;
+        private Button boutonCharger;
+        private Button boutonSauver;
+        private ComboBox comboFor;
+        private TextBox textNbFor;
+        private Button boutonGenerer;
+        private TextBox textModFor;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private ComboBox comboBox2;
+        private TextBox textModCon;
+        private TextBox textNbCon;
+        private ComboBox comboCon;
         private Label label3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private ComboBox comboBox3;
+        private TextBox textModApp;
+        private TextBox textNbApp;
+        private ComboBox comboApp;
         private Label label4;
-        private TextBox textBox6;
-        private TextBox textBox8;
-        private ComboBox comboBox4;
+        private TextBox textModDex;
+        private TextBox textNbDex;
+        private ComboBox comboDex;
         private Label label5;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private ComboBox comboBox5;
+        private TextBox textModPou;
+        private TextBox textNbPou;
+        private ComboBox comboPou;
         private Label label6;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private ComboBox comboBox6;
+        private TextBox textModEdu;
+        private TextBox textNbEdu;
+        private ComboBox comboEdu;
         private Label label7;
         private Label label8;
         private Label label9;
