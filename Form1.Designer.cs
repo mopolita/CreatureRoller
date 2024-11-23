@@ -38,7 +38,7 @@
             comboDex = new ComboBox();
             textModDex = new TextBox();
             textNbCon = new TextBox();
-            comboCon = new ComboBox();            
+            comboCon = new ComboBox();
             textModCon = new TextBox();
             textNbPou = new TextBox();
             comboPou = new ComboBox();
@@ -62,6 +62,9 @@
             label11 = new Label();
             label12 = new Label();
             SuspendLayout();
+
+            List<string> dice = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
+
             // 
             // boutonCharger
             // 
@@ -71,7 +74,7 @@
             boutonCharger.TabIndex = 0;
             boutonCharger.Text = "Charger un fichier";
             boutonCharger.UseVisualStyleBackColor = true;
-            boutonCharger.Click += boutonCharger_Click;
+            boutonCharger.Click += BoutonCharger_Click;
             // 
             // boutonSauver
             // 
@@ -82,21 +85,6 @@
             boutonSauver.Text = "Sauvegarder un modèle";
             boutonSauver.UseVisualStyleBackColor = true;
             // 
-            // comboFor
-            // 
-            comboFor.FormattingEnabled = true;
-            comboFor.Location = new Point(188, 112);
-            comboFor.Name = "comboFor";
-            comboFor.Size = new Size(50, 28);
-            comboFor.TabIndex = 2;
-            // 
-            // textNbFor
-            // 
-            textNbFor.Location = new Point(136, 112);
-            textNbFor.Name = "textNbFor";
-            textNbFor.Size = new Size(46, 27);
-            textNbFor.TabIndex = 7;
-            // 
             // boutonGenerer
             // 
             boutonGenerer.Location = new Point(298, 444);
@@ -105,39 +93,57 @@
             boutonGenerer.TabIndex = 18;
             boutonGenerer.Text = "Générer les statisiques";
             boutonGenerer.UseVisualStyleBackColor = true;
-            boutonGenerer.Click += boutonGenerer_Click;
+            boutonGenerer.Click += BoutonGenerer_Click;
+            // 
+            // textNbFor
+            // 
+            textNbFor.Location = new Point(136, 112);
+            textNbFor.Name = "textNbFor";
+            textNbFor.Size = new Size(46, 27);
+            textNbFor.TabIndex = 7;
+            //
+            // comboFor
+            //
+            comboFor.Items.AddRange(dice.ToArray());
+            comboFor.SelectedIndex = 0;
+            comboFor.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboFor.FormattingEnabled = true;
+            comboFor.Location = new Point(188, 112);
+            comboFor.Name = "comboFor";
+            comboFor.Size = new Size(70, 28);
+            comboFor.TabIndex = 2;
             // 
             // textModFor
             // 
-            textModFor.Location = new Point(265, 112);
+            textModFor.Location = new Point(285, 112);
             textModFor.Name = "textModFor";
             textModFor.Size = new Size(31, 27);
             textModFor.TabIndex = 19;
             // 
-            // label1
+            // textNbDex
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(244, 116);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 20);
-            label1.TabIndex = 25;
-            label1.Text = "+";
+            textNbDex.Location = new Point(487, 109);
+            textNbDex.Name = "textNbDex";
+            textNbDex.Size = new Size(46, 27);
+            textNbDex.TabIndex = 35;
             // 
-            // label2
+            // comboDex
+            //
+            comboDex.Items.AddRange(dice.ToArray());
+            comboDex.SelectedIndex = 0;
+            comboDex.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboDex.FormattingEnabled = true;
+            comboDex.Location = new Point(539, 109);
+            comboDex.Name = "comboDex";
+            comboDex.Size = new Size(75, 28);
+            comboDex.TabIndex = 34;
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(244, 232);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 20);
-            label2.TabIndex = 29;
-            label2.Text = "+";
+            // textModDex
             // 
-            // textModCon
-            // 
-            textModCon.Location = new Point(265, 228);
-            textModCon.Name = "textModCon";
-            textModCon.Size = new Size(31, 27);
-            textModCon.TabIndex = 28;
+            textModDex.Location = new Point(639, 109);
+            textModDex.Name = "textModDex";
+            textModDex.Size = new Size(31, 27);
+            textModDex.TabIndex = 36;
             // 
             // textNbCon
             // 
@@ -148,89 +154,21 @@
             // 
             // comboCon
             // 
+            comboCon.Items.AddRange(dice.ToArray());
+            comboCon.SelectedIndex = 0;
+            comboCon.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCon.FormattingEnabled = true;
             comboCon.Location = new Point(188, 228);
             comboCon.Name = "comboCon";
-            comboCon.Size = new Size(50, 28);
+            comboCon.Size = new Size(70, 28);
             comboCon.TabIndex = 26;
             // 
-            // label3
+            // textModCon
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(244, 337);
-            label3.Name = "label3";
-            label3.Size = new Size(19, 20);
-            label3.TabIndex = 33;
-            label3.Text = "+";
-            // 
-            // textModApp
-            // 
-            textModApp.Location = new Point(265, 333);
-            textModApp.Name = "textModApp";
-            textModApp.Size = new Size(31, 27);
-            textModApp.TabIndex = 32;
-            // 
-            // textNbApp
-            // 
-            textNbApp.Location = new Point(136, 333);
-            textNbApp.Name = "textNbApp";
-            textNbApp.Size = new Size(46, 27);
-            textNbApp.TabIndex = 31;
-            // 
-            // comboApp
-            // 
-            comboApp.FormattingEnabled = true;
-            comboApp.Location = new Point(188, 333);
-            comboApp.Name = "comboApp";
-            comboApp.Size = new Size(50, 28);
-            comboApp.TabIndex = 30;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(595, 113);
-            label4.Name = "label4";
-            label4.Size = new Size(19, 20);
-            label4.TabIndex = 37;
-            label4.Text = "+";
-            // 
-            // textModDex
-            // 
-            textModDex.Location = new Point(616, 109);
-            textModDex.Name = "textModDex";
-            textModDex.Size = new Size(31, 27);
-            textModDex.TabIndex = 36;
-            // 
-            // textNbDex
-            // 
-            textNbDex.Location = new Point(487, 109);
-            textNbDex.Name = "textNbDex";
-            textNbDex.Size = new Size(46, 27);
-            textNbDex.TabIndex = 35;
-            // 
-            // comboDex
-            // 
-            comboDex.FormattingEnabled = true;
-            comboDex.Location = new Point(539, 109);
-            comboDex.Name = "comboDex";
-            comboDex.Size = new Size(50, 28);
-            comboDex.TabIndex = 34;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(595, 233);
-            label5.Name = "label5";
-            label5.Size = new Size(19, 20);
-            label5.TabIndex = 41;
-            label5.Text = "+";
-            // 
-            // textModPou
-            // 
-            textModPou.Location = new Point(616, 229);
-            textModPou.Name = "textModPou";
-            textModPou.Size = new Size(31, 27);
-            textModPou.TabIndex = 40;
+            textModCon.Location = new Point(285, 228);
+            textModCon.Name = "textModCon";
+            textModCon.Size = new Size(31, 27);
+            textModCon.TabIndex = 28;
             // 
             // textNbPou
             // 
@@ -241,27 +179,46 @@
             // 
             // comboPou
             // 
+            comboPou.Items.AddRange(dice.ToArray());
+            comboPou.SelectedIndex = 0;
+            comboPou.DropDownStyle = ComboBoxStyle.DropDownList;
             comboPou.FormattingEnabled = true;
             comboPou.Location = new Point(539, 229);
             comboPou.Name = "comboPou";
-            comboPou.Size = new Size(50, 28);
+            comboPou.Size = new Size(75, 28);
             comboPou.TabIndex = 38;
             // 
-            // label6
+            // textModPou
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(595, 337);
-            label6.Name = "label6";
-            label6.Size = new Size(19, 20);
-            label6.TabIndex = 45;
-            label6.Text = "+";
+            textModPou.Location = new Point(639, 229);
+            textModPou.Name = "textModPou";
+            textModPou.Size = new Size(31, 27);
+            textModPou.TabIndex = 40;
             // 
-            // textModEdu
+            // textNbApp
             // 
-            textModEdu.Location = new Point(616, 333);
-            textModEdu.Name = "textModEdu";
-            textModEdu.Size = new Size(31, 27);
-            textModEdu.TabIndex = 44;
+            textNbApp.Location = new Point(136, 333);
+            textNbApp.Name = "textNbApp";
+            textNbApp.Size = new Size(46, 27);
+            textNbApp.TabIndex = 31;
+            // 
+            // comboApp
+            //
+            comboApp.Items.AddRange(dice.ToArray());
+            comboApp.SelectedIndex = 0;
+            comboApp.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboApp.FormattingEnabled = true;
+            comboApp.Location = new Point(188, 333);
+            comboApp.Name = "comboApp";
+            comboApp.Size = new Size(70, 28);
+            comboApp.TabIndex = 30;
+            // 
+            // textModApp
+            // 
+            textModApp.Location = new Point(285, 333);
+            textModApp.Name = "textModApp";
+            textModApp.Size = new Size(31, 27);
+            textModApp.TabIndex = 32;
             // 
             // textNbEdu
             // 
@@ -271,12 +228,76 @@
             textNbEdu.TabIndex = 43;
             // 
             // comboEdu
-            // 
+            //
+            comboEdu.Items.AddRange(dice.ToArray());
+            comboEdu.SelectedIndex = 0;
+            comboEdu.DropDownStyle = ComboBoxStyle.DropDownList;
             comboEdu.FormattingEnabled = true;
             comboEdu.Location = new Point(539, 333);
             comboEdu.Name = "comboEdu";
-            comboEdu.Size = new Size(50, 28);
+            comboEdu.Size = new Size(75, 28);
             comboEdu.TabIndex = 42;
+            // 
+            // textModEdu
+            // 
+            textModEdu.Location = new Point(639, 333);
+            textModEdu.Name = "textModEdu";
+            textModEdu.Size = new Size(31, 27);
+            textModEdu.TabIndex = 44;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(264, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(19, 20);
+            label1.TabIndex = 25;
+            label1.Text = "+";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(264, 232);
+            label2.Name = "label2";
+            label2.Size = new Size(19, 20);
+            label2.TabIndex = 29;
+            label2.Text = "+";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(264, 337);
+            label3.Name = "label3";
+            label3.Size = new Size(19, 20);
+            label3.TabIndex = 33;
+            label3.Text = "+";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(618, 113);
+            label4.Name = "label4";
+            label4.Size = new Size(19, 20);
+            label4.TabIndex = 37;
+            label4.Text = "+";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(618, 233);
+            label5.Name = "label5";
+            label5.Size = new Size(19, 20);
+            label5.TabIndex = 41;
+            label5.Text = "+";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(618, 337);
+            label6.Name = "label6";
+            label6.Size = new Size(19, 20);
+            label6.TabIndex = 45;
+            label6.Text = "+";
             // 
             // label7
             // 
