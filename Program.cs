@@ -16,18 +16,4 @@ namespace CreatureRoller
             Application.Run(new MainForm());
         }
     }
-
-    public static class Dice
-    {
-        public static int Roll(int nb, int faces, int mod = 0)
-        {
-            Random random = new Random();
-            int total = mod;
-            for (int i = 0; i < nb; i++)
-            {
-                total += random.Next(1, faces + 1);
-            }
-            return total;
-        }    
-    }
 }
