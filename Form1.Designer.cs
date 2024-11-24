@@ -110,12 +110,12 @@
             comboFor.FormattingEnabled = true;
             comboFor.Location = new Point(188, 112);
             comboFor.Name = "comboFor";
-            comboFor.Size = new Size(70, 28);
+            comboFor.Size = new Size(62, 28);
             comboFor.TabIndex = 2;
             // 
             // textModFor
             // 
-            textModFor.Location = new Point(285, 112);
+            textModFor.Location = new Point(272, 112);
             textModFor.Name = "textModFor";
             textModFor.Size = new Size(31, 27);
             textModFor.TabIndex = 19;
@@ -135,12 +135,12 @@
             comboDex.FormattingEnabled = true;
             comboDex.Location = new Point(539, 109);
             comboDex.Name = "comboDex";
-            comboDex.Size = new Size(75, 28);
+            comboDex.Size = new Size(62, 28);
             comboDex.TabIndex = 34;
             // 
             // textModDex
             // 
-            textModDex.Location = new Point(639, 109);
+            textModDex.Location = new Point(626, 109);
             textModDex.Name = "textModDex";
             textModDex.Size = new Size(31, 27);
             textModDex.TabIndex = 36;
@@ -160,12 +160,12 @@
             comboCon.FormattingEnabled = true;
             comboCon.Location = new Point(188, 228);
             comboCon.Name = "comboCon";
-            comboCon.Size = new Size(70, 28);
+            comboCon.Size = new Size(62, 28);
             comboCon.TabIndex = 26;
             // 
             // textModCon
             // 
-            textModCon.Location = new Point(285, 228);
+            textModCon.Location = new Point(272, 228);
             textModCon.Name = "textModCon";
             textModCon.Size = new Size(31, 27);
             textModCon.TabIndex = 28;
@@ -185,12 +185,12 @@
             comboPou.FormattingEnabled = true;
             comboPou.Location = new Point(539, 229);
             comboPou.Name = "comboPou";
-            comboPou.Size = new Size(75, 28);
+            comboPou.Size = new Size(62, 28);
             comboPou.TabIndex = 38;
             // 
             // textModPou
             // 
-            textModPou.Location = new Point(639, 229);
+            textModPou.Location = new Point(626, 229);
             textModPou.Name = "textModPou";
             textModPou.Size = new Size(31, 27);
             textModPou.TabIndex = 40;
@@ -210,12 +210,12 @@
             comboApp.FormattingEnabled = true;
             comboApp.Location = new Point(188, 333);
             comboApp.Name = "comboApp";
-            comboApp.Size = new Size(70, 28);
+            comboApp.Size = new Size(62, 28);
             comboApp.TabIndex = 30;
             // 
             // textModApp
             // 
-            textModApp.Location = new Point(285, 333);
+            textModApp.Location = new Point(272, 333);
             textModApp.Name = "textModApp";
             textModApp.Size = new Size(31, 27);
             textModApp.TabIndex = 32;
@@ -235,12 +235,12 @@
             comboEdu.FormattingEnabled = true;
             comboEdu.Location = new Point(539, 333);
             comboEdu.Name = "comboEdu";
-            comboEdu.Size = new Size(75, 28);
+            comboEdu.Size = new Size(62, 28);
             comboEdu.TabIndex = 42;
             // 
             // textModEdu
             // 
-            textModEdu.Location = new Point(639, 333);
+            textModEdu.Location = new Point(626, 333);
             textModEdu.Name = "textModEdu";
             textModEdu.Size = new Size(31, 27);
             textModEdu.TabIndex = 44;
@@ -248,7 +248,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(264, 116);
+            label1.Location = new Point(251, 116);
             label1.Name = "label1";
             label1.Size = new Size(19, 20);
             label1.TabIndex = 25;
@@ -257,7 +257,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(264, 232);
+            label2.Location = new Point(251, 232);
             label2.Name = "label2";
             label2.Size = new Size(19, 20);
             label2.TabIndex = 29;
@@ -266,7 +266,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(264, 337);
+            label3.Location = new Point(251, 337);
             label3.Name = "label3";
             label3.Size = new Size(19, 20);
             label3.TabIndex = 33;
@@ -275,7 +275,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(618, 113);
+            label4.Location = new Point(605, 113);
             label4.Name = "label4";
             label4.Size = new Size(19, 20);
             label4.TabIndex = 37;
@@ -284,7 +284,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(618, 233);
+            label5.Location = new Point(605, 233);
             label5.Name = "label5";
             label5.Size = new Size(19, 20);
             label5.TabIndex = 41;
@@ -293,7 +293,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(618, 337);
+            label6.Location = new Point(605, 337);
             label6.Name = "label6";
             label6.Size = new Size(19, 20);
             label6.TabIndex = 45;
