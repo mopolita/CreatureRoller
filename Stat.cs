@@ -13,12 +13,12 @@
         /// <param name="numDice">le nombre de dés à lancer</param>
         /// <param name="diceType">la valeur d'un dé (ex "d4", "d6")</param>
         /// <param name="modifier">le modificateur du dé (peut être négatif)</param>
-        public Stat(int numDice, string diceType, string modifier)
+        public Stat(int numDice, string diceType, int modifier)
         {
             // Conversion des strings en int
             NumDice = numDice;
             DiceType = int.TryParse(diceType.TrimStart('d', 'D'), out int d) ? d : 0;
-            Modifier = int.TryParse(modifier, out int m) ? m : 0;
+            Modifier = modifier;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@
             {
                 total += random.Next(1, DiceType + 1);
             }
-            return total;
+            return total * 5;
         }
 
         // Méthode pour afficher la stat
