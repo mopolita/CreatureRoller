@@ -8,38 +8,27 @@ namespace CreatureRoller
 	/// </summary>
 	public class Creature
 	{
-		public string Name { get; }
-		protected Stat For { get; }
-		protected Stat Dex { get; }
-		protected Stat Con { get; }
-		protected Stat Pou { get; }
-		protected Stat App { get; }
-		protected Stat Edu { get; }
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public List<Stat> StatList { get;set; }
 
 		public Creature()
 		{
-			Name = "";
-			For = new Stat();
-			Dex = new Stat();
-			Con = new Stat();
-			Pou = new Stat();
-			App = new Stat();
-			Edu = new Stat();
+			Name = "N/A";
+			Description = string.Empty;
+			StatList = new List<Stat>();
 		}
 
-		public Creature(string name,  Stat force, Stat dex, Stat con, Stat pou, Stat app, Stat edu)
+		public Creature(string name,  string description, List<Stat> statList )
 		{
 			Name = name;
-			For = force;
-			Dex = dex;
-			Con = con;
-			Pou = pou;
-			App = app;
-			Edu = edu;
+			Description = description;
+			StatList = statList;
 		}
 
-		public void set_stat(Stat stat, int NbDice, int Faces, int Modifier)
+		public void set_stat(Stat stat, string name, int NbDice, int Faces, int Modifier)
 		{
+			stat.Name = name;
 			stat.NumDice = NbDice;
 			stat.Faces = Faces;
 			stat.Modifier = Modifier;

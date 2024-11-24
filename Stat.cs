@@ -14,7 +14,8 @@
         /// <param name="numDice">le nombre de dés à lancer</param>
         /// <param name="faces">le nombre de faces d'un dé</param>
         /// <param name="modifier">le modificateur du dé (peut être négatif)</param>
-        public Stat(string name, int numDice, int faces, int modifier)
+        /// <param name="name">le nom de la statistique</param>
+        public Stat( int numDice, int faces, int modifier, string name = "default_name")
         {
             Name = name;
             NumDice = numDice;
