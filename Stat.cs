@@ -25,7 +25,7 @@
         /// Calcule le résultat d'un lancer de dé sous la forme NumDice * dDiceType + Modifier (ex 3d6+5)
         /// </summary>
         /// <returns>le résultat calculé</returns>
-        public int readonly Roll()
+        public readonly int  Roll()
         {
             int total = Modifier;
             for (int i = 0; i < NumDice; i++)
@@ -36,7 +36,7 @@
         }
 
         // Méthode pour afficher la stat
-        public override string readonly ToString()
+        public readonly override string ToString()
         {
             return $"{NumDice}d{DiceType} + {Modifier}";
         }

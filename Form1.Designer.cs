@@ -31,37 +31,24 @@
             boutonCharger = new Button();
             boutonSauver = new Button();
             boutonGenerer = new Button();
-
             numericUpDownFor = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownFor).BeginInit();
             comboFor = new ComboBox();
             textModFor = new TextBox();
-            
             numericUpDownDex = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownDex).BeginInit();
             comboDex = new ComboBox();
             textModDex = new TextBox();
-
             numericUpDownCon = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownCon).BeginInit();
             comboCon = new ComboBox();
             textModCon = new TextBox();
-
             numericUpDownPou = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownPou).BeginInit();
             comboPou = new ComboBox();
             textModPou = new TextBox();
-
             numericUpDownApp = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownApp).BeginInit();
             comboApp = new ComboBox();
             textModApp = new TextBox();
-
             numericUpDownEdu = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownEdu).BeginInit();
             comboEdu = new ComboBox();
             textModEdu = new TextBox();
-            
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -74,7 +61,12 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
-
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDex).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCon).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPou).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownApp).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdu).BeginInit();
             SuspendLayout();
             // 
             // boutonCharger
@@ -110,6 +102,7 @@
             // 
             numericUpDownFor.Location = new Point(136, 109);
             numericUpDownFor.Name = "numericUpDownFor";
+            numericUpDownFor.ReadOnly = true;
             numericUpDownFor.Size = new Size(46, 27);
             numericUpDownFor.TabIndex = 52;
             // 
@@ -129,6 +122,14 @@
             textModFor.Size = new Size(31, 27);
             textModFor.TabIndex = 19;
             // 
+            // numericUpDownDex
+            // 
+            numericUpDownDex.Location = new Point(487, 109);
+            numericUpDownDex.Name = "numericUpDownDex";
+            numericUpDownDex.ReadOnly = true;
+            numericUpDownDex.Size = new Size(46, 27);
+            numericUpDownDex.TabIndex = 53;
+            // 
             // comboDex
             // 
             comboDex.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -144,6 +145,14 @@
             textModDex.Name = "textModDex";
             textModDex.Size = new Size(31, 27);
             textModDex.TabIndex = 36;
+            // 
+            // numericUpDownCon
+            // 
+            numericUpDownCon.Location = new Point(136, 228);
+            numericUpDownCon.Name = "numericUpDownCon";
+            numericUpDownCon.ReadOnly = true;
+            numericUpDownCon.Size = new Size(46, 27);
+            numericUpDownCon.TabIndex = 54;
             // 
             // comboCon
             // 
@@ -161,6 +170,14 @@
             textModCon.Size = new Size(31, 27);
             textModCon.TabIndex = 28;
             // 
+            // numericUpDownPou
+            // 
+            numericUpDownPou.Location = new Point(487, 228);
+            numericUpDownPou.Name = "numericUpDownPou";
+            numericUpDownPou.ReadOnly = true;
+            numericUpDownPou.Size = new Size(46, 27);
+            numericUpDownPou.TabIndex = 55;
+            // 
             // comboPou
             // 
             comboPou.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -177,6 +194,14 @@
             textModPou.Size = new Size(31, 27);
             textModPou.TabIndex = 40;
             // 
+            // numericUpDownApp
+            // 
+            numericUpDownApp.Location = new Point(136, 333);
+            numericUpDownApp.Name = "numericUpDownApp";
+            numericUpDownApp.ReadOnly = true;
+            numericUpDownApp.Size = new Size(46, 27);
+            numericUpDownApp.TabIndex = 56;
+            // 
             // comboApp
             // 
             comboApp.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -192,6 +217,14 @@
             textModApp.Name = "textModApp";
             textModApp.Size = new Size(31, 27);
             textModApp.TabIndex = 32;
+            // 
+            // numericUpDownEdu
+            // 
+            numericUpDownEdu.Location = new Point(487, 333);
+            numericUpDownEdu.Name = "numericUpDownEdu";
+            numericUpDownEdu.ReadOnly = true;
+            numericUpDownEdu.Size = new Size(46, 27);
+            numericUpDownEdu.TabIndex = 57;
             // 
             // comboEdu
             // 
@@ -316,41 +349,6 @@
             label12.Size = new Size(75, 20);
             label12.TabIndex = 51;
             label12.Text = "Education";
-            // 
-            // numericUpDownDex
-            // 
-            numericUpDownDex.Location = new Point(487, 109);
-            numericUpDownDex.Name = "numericUpDownDex";
-            numericUpDownDex.Size = new Size(46, 27);
-            numericUpDownDex.TabIndex = 53;
-            // 
-            // numericUpDownCon
-            // 
-            numericUpDownCon.Location = new Point(136, 228);
-            numericUpDownCon.Name = "numericUpDownCon";
-            numericUpDownCon.Size = new Size(46, 27);
-            numericUpDownCon.TabIndex = 54;
-            // 
-            // numericUpDownPou
-            // 
-            numericUpDownPou.Location = new Point(487, 228);
-            numericUpDownPou.Name = "numericUpDownPou";
-            numericUpDownPou.Size = new Size(46, 27);
-            numericUpDownPou.TabIndex = 55;
-            // 
-            // numericUpDownApp
-            // 
-            numericUpDownApp.Location = new Point(136, 333);
-            numericUpDownApp.Name = "numericUpDownApp";
-            numericUpDownApp.Size = new Size(46, 27);
-            numericUpDownApp.TabIndex = 56;
-            // 
-            // numericUpDownEdu
-            // 
-            numericUpDownEdu.Location = new Point(487, 333);
-            numericUpDownEdu.Name = "numericUpDownEdu";
-            numericUpDownEdu.Size = new Size(46, 27);
-            numericUpDownEdu.TabIndex = 57;
             // 
             // MainForm
             // 
