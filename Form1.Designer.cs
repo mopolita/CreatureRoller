@@ -87,9 +87,9 @@
             // 
             // boutonGenerer
             // 
-            boutonGenerer.Location = new Point(298, 444);
+            boutonGenerer.Location = new Point(303, 444);
             boutonGenerer.Name = "boutonGenerer";
-            boutonGenerer.Size = new Size(180, 29);
+            boutonGenerer.Size = new Size(184, 30);
             boutonGenerer.TabIndex = 18;
             boutonGenerer.Text = "Générer les statisiques";
             boutonGenerer.UseVisualStyleBackColor = true;
