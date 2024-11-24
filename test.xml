@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Creatures>
+	<Creature>
+		<Name>Test Boi 1</Name>
+		<Stats>
+			<For>
+				<Dice>3</Dice>
+				<Faces>6</Faces>
+				<Modifier>2</Modifier>
+			</For>
+			<Dex>
+				<Dice>2</Dice>
+				<Faces>8</Faces>
+				<Modifier>-1</Modifier>
+			</Dex>
+		</Stats>
+	</Creature>
+	<Creature>
+		<Name>Test Boi 2</Name>
+		<Stats>
+			<For>
+				<Dice>1</Dice>
+				<Faces>6</Faces>
+				<Modifier>0</Modifier>
+			</For>
+			<Dex>
+				<Dice>2</Dice>
+				<Faces>4</Faces>
+				<Modifier>1</Modifier>
+			</Dex>
+		</Stats>
+	</Creature>
+</Creatures>
+
+
