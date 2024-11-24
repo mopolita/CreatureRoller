@@ -48,7 +48,7 @@
         // Méthode pour afficher la stat
         public override string ToString()
         {
-            return $"{NumDice}d{Faces} + {Modifier}";
+            return $"{Name} : {NumDice}d{Faces} + {Modifier}";
         }
     }
 }
