@@ -401,31 +401,38 @@
 
         private Button boutonCharger;
         private Button boutonSauver;
-        private ComboBox comboFor;
-        private TextBox textNbFor;
         private Button boutonGenerer;
+
+        private TextBox textNbFor;
+        private ComboBox comboFor;
         private TextBox textModFor;
-        private Label label1;
-        private Label label2;
-        private TextBox textModCon;
+
         private TextBox textNbCon;
         private ComboBox comboCon;
-        private Label label3;
-        private TextBox textModApp;
+        private TextBox textModCon;
+
         private TextBox textNbApp;
         private ComboBox comboApp;
-        private Label label4;
-        private TextBox textModDex;
+        private TextBox textModApp;
+
         private TextBox textNbDex;
         private ComboBox comboDex;
-        private Label label5;
-        private TextBox textModPou;
+        private TextBox textModDex;
+
         private TextBox textNbPou;
         private ComboBox comboPou;
-        private Label label6;
-        private TextBox textModEdu;
+        private TextBox textModPou;
+
         private TextBox textNbEdu;
         private ComboBox comboEdu;
+        private TextBox textModEdu;
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
