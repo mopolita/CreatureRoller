@@ -31,24 +31,37 @@
             boutonCharger = new Button();
             boutonSauver = new Button();
             boutonGenerer = new Button();
-            textNbFor = new TextBox();
+
+            numericUpDownFor = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFor).BeginInit();
             comboFor = new ComboBox();
             textModFor = new TextBox();
-            textNbDex = new TextBox();
+            
+            numericUpDownDex = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDex).BeginInit();
             comboDex = new ComboBox();
             textModDex = new TextBox();
-            textNbCon = new TextBox();
+
+            numericUpDownCon = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCon).BeginInit();
             comboCon = new ComboBox();
             textModCon = new TextBox();
-            textNbPou = new TextBox();
+
+            numericUpDownPou = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPou).BeginInit();
             comboPou = new ComboBox();
             textModPou = new TextBox();
-            textNbApp = new TextBox();
+
+            numericUpDownApp = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownApp).BeginInit();
             comboApp = new ComboBox();
             textModApp = new TextBox();
-            textNbEdu = new TextBox();
+
+            numericUpDownEdu = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdu).BeginInit();
             comboEdu = new ComboBox();
             textModEdu = new TextBox();
+            
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -61,10 +74,8 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+
             SuspendLayout();
-
-            List<string> dice = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
-
             // 
             // boutonCharger
             // 
@@ -95,42 +106,31 @@
             boutonGenerer.UseVisualStyleBackColor = true;
             boutonGenerer.Click += BoutonGenerer_Click;
             // 
-            // textNbFor
+            // numericUpDownFor
             // 
-            textNbFor.Location = new Point(136, 112);
-            textNbFor.Name = "textNbFor";
-            textNbFor.Size = new Size(46, 27);
-            textNbFor.TabIndex = 7;
-            //
+            numericUpDownFor.Location = new Point(136, 109);
+            numericUpDownFor.Name = "numericUpDownFor";
+            numericUpDownFor.Size = new Size(46, 27);
+            numericUpDownFor.TabIndex = 52;
+            // 
             // comboFor
-            //
-            comboFor.Items.AddRange(dice.ToArray());
-            comboFor.SelectedIndex = 0;
+            // 
             comboFor.DropDownStyle = ComboBoxStyle.DropDownList;
             comboFor.FormattingEnabled = true;
-            comboFor.Location = new Point(188, 112);
+            comboFor.Location = new Point(188, 109);
             comboFor.Name = "comboFor";
             comboFor.Size = new Size(62, 28);
             comboFor.TabIndex = 2;
             // 
             // textModFor
             // 
-            textModFor.Location = new Point(272, 112);
+            textModFor.Location = new Point(272, 109);
             textModFor.Name = "textModFor";
             textModFor.Size = new Size(31, 27);
             textModFor.TabIndex = 19;
             // 
-            // textNbDex
-            // 
-            textNbDex.Location = new Point(487, 109);
-            textNbDex.Name = "textNbDex";
-            textNbDex.Size = new Size(46, 27);
-            textNbDex.TabIndex = 35;
-            // 
             // comboDex
-            //
-            comboDex.Items.AddRange(dice.ToArray());
-            comboDex.SelectedIndex = 0;
+            // 
             comboDex.DropDownStyle = ComboBoxStyle.DropDownList;
             comboDex.FormattingEnabled = true;
             comboDex.Location = new Point(539, 109);
@@ -145,17 +145,8 @@
             textModDex.Size = new Size(31, 27);
             textModDex.TabIndex = 36;
             // 
-            // textNbCon
-            // 
-            textNbCon.Location = new Point(136, 228);
-            textNbCon.Name = "textNbCon";
-            textNbCon.Size = new Size(46, 27);
-            textNbCon.TabIndex = 27;
-            // 
             // comboCon
             // 
-            comboCon.Items.AddRange(dice.ToArray());
-            comboCon.SelectedIndex = 0;
             comboCon.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCon.FormattingEnabled = true;
             comboCon.Location = new Point(188, 228);
@@ -170,42 +161,24 @@
             textModCon.Size = new Size(31, 27);
             textModCon.TabIndex = 28;
             // 
-            // textNbPou
-            // 
-            textNbPou.Location = new Point(487, 229);
-            textNbPou.Name = "textNbPou";
-            textNbPou.Size = new Size(46, 27);
-            textNbPou.TabIndex = 39;
-            // 
             // comboPou
             // 
-            comboPou.Items.AddRange(dice.ToArray());
-            comboPou.SelectedIndex = 0;
             comboPou.DropDownStyle = ComboBoxStyle.DropDownList;
             comboPou.FormattingEnabled = true;
-            comboPou.Location = new Point(539, 229);
+            comboPou.Location = new Point(539, 228);
             comboPou.Name = "comboPou";
             comboPou.Size = new Size(62, 28);
             comboPou.TabIndex = 38;
             // 
             // textModPou
             // 
-            textModPou.Location = new Point(626, 229);
+            textModPou.Location = new Point(626, 228);
             textModPou.Name = "textModPou";
             textModPou.Size = new Size(31, 27);
             textModPou.TabIndex = 40;
             // 
-            // textNbApp
-            // 
-            textNbApp.Location = new Point(136, 333);
-            textNbApp.Name = "textNbApp";
-            textNbApp.Size = new Size(46, 27);
-            textNbApp.TabIndex = 31;
-            // 
             // comboApp
-            //
-            comboApp.Items.AddRange(dice.ToArray());
-            comboApp.SelectedIndex = 0;
+            // 
             comboApp.DropDownStyle = ComboBoxStyle.DropDownList;
             comboApp.FormattingEnabled = true;
             comboApp.Location = new Point(188, 333);
@@ -220,17 +193,8 @@
             textModApp.Size = new Size(31, 27);
             textModApp.TabIndex = 32;
             // 
-            // textNbEdu
-            // 
-            textNbEdu.Location = new Point(487, 333);
-            textNbEdu.Name = "textNbEdu";
-            textNbEdu.Size = new Size(46, 27);
-            textNbEdu.TabIndex = 43;
-            // 
             // comboEdu
-            //
-            comboEdu.Items.AddRange(dice.ToArray());
-            comboEdu.SelectedIndex = 0;
+            // 
             comboEdu.DropDownStyle = ComboBoxStyle.DropDownList;
             comboEdu.FormattingEnabled = true;
             comboEdu.Location = new Point(539, 333);
@@ -248,7 +212,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(251, 116);
+            label1.Location = new Point(251, 111);
             label1.Name = "label1";
             label1.Size = new Size(19, 20);
             label1.TabIndex = 25;
@@ -257,7 +221,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(251, 232);
+            label2.Location = new Point(251, 230);
             label2.Name = "label2";
             label2.Size = new Size(19, 20);
             label2.TabIndex = 29;
@@ -266,7 +230,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(251, 337);
+            label3.Location = new Point(251, 335);
             label3.Name = "label3";
             label3.Size = new Size(19, 20);
             label3.TabIndex = 33;
@@ -275,7 +239,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(605, 113);
+            label4.Location = new Point(605, 111);
             label4.Name = "label4";
             label4.Size = new Size(19, 20);
             label4.TabIndex = 37;
@@ -284,7 +248,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(605, 233);
+            label5.Location = new Point(605, 230);
             label5.Name = "label5";
             label5.Size = new Size(19, 20);
             label5.TabIndex = 41;
@@ -293,7 +257,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(605, 337);
+            label6.Location = new Point(605, 335);
             label6.Name = "label6";
             label6.Size = new Size(19, 20);
             label6.TabIndex = 45;
@@ -353,11 +317,52 @@
             label12.TabIndex = 51;
             label12.Text = "Education";
             // 
+            // numericUpDownDex
+            // 
+            numericUpDownDex.Location = new Point(487, 109);
+            numericUpDownDex.Name = "numericUpDownDex";
+            numericUpDownDex.Size = new Size(46, 27);
+            numericUpDownDex.TabIndex = 53;
+            // 
+            // numericUpDownCon
+            // 
+            numericUpDownCon.Location = new Point(136, 228);
+            numericUpDownCon.Name = "numericUpDownCon";
+            numericUpDownCon.Size = new Size(46, 27);
+            numericUpDownCon.TabIndex = 54;
+            // 
+            // numericUpDownPou
+            // 
+            numericUpDownPou.Location = new Point(487, 228);
+            numericUpDownPou.Name = "numericUpDownPou";
+            numericUpDownPou.Size = new Size(46, 27);
+            numericUpDownPou.TabIndex = 55;
+            // 
+            // numericUpDownApp
+            // 
+            numericUpDownApp.Location = new Point(136, 333);
+            numericUpDownApp.Name = "numericUpDownApp";
+            numericUpDownApp.Size = new Size(46, 27);
+            numericUpDownApp.TabIndex = 56;
+            // 
+            // numericUpDownEdu
+            // 
+            numericUpDownEdu.Location = new Point(487, 333);
+            numericUpDownEdu.Name = "numericUpDownEdu";
+            numericUpDownEdu.Size = new Size(46, 27);
+            numericUpDownEdu.TabIndex = 57;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 485);
+            Controls.Add(numericUpDownEdu);
+            Controls.Add(numericUpDownApp);
+            Controls.Add(numericUpDownPou);
+            Controls.Add(numericUpDownCon);
+            Controls.Add(numericUpDownDex);
+            Controls.Add(numericUpDownFor);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -366,33 +371,35 @@
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(textModEdu);
-            Controls.Add(textNbEdu);
             Controls.Add(comboEdu);
             Controls.Add(label5);
             Controls.Add(textModPou);
-            Controls.Add(textNbPou);
             Controls.Add(comboPou);
             Controls.Add(label4);
             Controls.Add(textModDex);
-            Controls.Add(textNbDex);
             Controls.Add(comboDex);
             Controls.Add(label3);
             Controls.Add(textModApp);
-            Controls.Add(textNbApp);
             Controls.Add(comboApp);
             Controls.Add(label2);
             Controls.Add(textModCon);
-            Controls.Add(textNbCon);
             Controls.Add(comboCon);
             Controls.Add(label1);
             Controls.Add(textModFor);
             Controls.Add(boutonGenerer);
-            Controls.Add(textNbFor);
             Controls.Add(comboFor);
             Controls.Add(boutonSauver);
             Controls.Add(boutonCharger);
+            MaximumSize = new Size(818, 532);
+            MinimumSize = new Size(818, 532);
             Name = "MainForm";
             Text = "Lovecraftian Creature Roller";
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDex).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCon).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPou).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownApp).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -402,28 +409,28 @@
         private Button boutonCharger;
         private Button boutonSauver;
         private Button boutonGenerer;
-
-        private TextBox textNbFor;
+        
+        private NumericUpDown numericUpDownFor;
         private ComboBox comboFor;
         private TextBox textModFor;
 
-        private TextBox textNbCon;
+        private NumericUpDown numericUpDownDex;
         private ComboBox comboCon;
         private TextBox textModCon;
 
-        private TextBox textNbApp;
+        private NumericUpDown numericUpDownCon;
         private ComboBox comboApp;
         private TextBox textModApp;
 
-        private TextBox textNbDex;
+        private NumericUpDown numericUpDownPou;
         private ComboBox comboDex;
         private TextBox textModDex;
 
-        private TextBox textNbPou;
+        private NumericUpDown numericUpDownApp;
         private ComboBox comboPou;
         private TextBox textModPou;
 
-        private TextBox textNbEdu;
+        private NumericUpDown numericUpDownEdu;
         private ComboBox comboEdu;
         private TextBox textModEdu;
 
