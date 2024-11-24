@@ -2,8 +2,21 @@ namespace CreatureRoller
 {
     public partial class MainForm : Form
     {
+        private Stat For;
+        private Stat Dex;
+        private Stat Con;
+        private Stat Pou;
+        private Stat App;
+        private Stat Edu;
+
         public MainForm()
         {
+            For = new Stat();
+            Dex = new Stat();
+            Con = new Stat();
+            Pou = new Stat();
+            App = new Stat();
+            Edu = new Stat();
             InitializeComponent();
         }
 
@@ -19,19 +32,36 @@ namespace CreatureRoller
 
         private void BoutonGenerer_Click(object sender, EventArgs e)
         {
-            Stat force = new Stat((int)numericUpDownNbFor.Value, comboFor.SelectedItem!.ToString(), (int)numericUpDownModFor.Value);
-            Stat dex = new Stat((int)numericUpDownNbDex.Value, comboDex.SelectedItem!.ToString(), (int)numericUpDownModDex.Value);
-            Stat con = new Stat((int)numericUpDownNbCon.Value, comboCon.SelectedItem!.ToString(), (int)numericUpDownModCon.Value);
-            Stat pou = new Stat((int)numericUpDownNbPou.Value, comboPou.SelectedItem!.ToString(), (int)numericUpDownModPou.Value);
-            Stat app = new Stat((int)numericUpDownNbApp.Value, comboApp.SelectedItem!.ToString(), (int)numericUpDownModApp.Value);
-            Stat edu = new Stat((int)numericUpDownNbEdu.Value, comboEdu.SelectedItem!.ToString(), (int)numericUpDownModEdu.Value);
+            For.NumDice = (int)numericUpDownNbFor.Value;
+            For.DiceType = int.TryParse(comboFor.SelectedItem!.ToString().TrimStart('d', 'D'), out int d) ? d : 0;
+            For.Modifier = (int)numericUpDownModFor.Value;
 
-            textResFor.Text = force.Roll().ToString();
-            textResDex.Text = dex.Roll().ToString();
-            textResCon.Text = con.Roll().ToString();
-            textResPou.Text = pou.Roll().ToString();
-            textResApp.Text = app.Roll().ToString();
-            textResEdu.Text = edu.Roll().ToString();
+            Dex.NumDice = (int)numericUpDownNbDex.Value;
+            Dex.DiceType = int.TryParse(comboDex.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+            Dex.Modifier = (int)numericUpDownModDex.Value;
+
+            Con.NumDice = (int)numericUpDownNbCon.Value;
+            Con.DiceType = int.TryParse(comboCon.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+            Con.Modifier = (int)numericUpDownModCon.Value;
+
+            Pou.NumDice = (int)numericUpDownNbPou.Value;
+            Pou.DiceType = int.TryParse(comboPou.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+            Pou.Modifier = (int)numericUpDownModPou.Value;
+
+            App.NumDice = (int)numericUpDownNbApp.Value;
+            App.DiceType = int.TryParse(comboApp.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+            App.Modifier = (int)numericUpDownModApp.Value;
+
+            Edu.NumDice = (int)numericUpDownNbEdu.Value;
+            Edu.DiceType = int.TryParse(comboEdu.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+            Edu.Modifier = (int)numericUpDownModEdu.Value;
+
+            textResFor.Text = For.Roll().ToString();
+            textResDex.Text = Dex.Roll().ToString();
+            textResCon.Text = Con.Roll().ToString();
+            textResPou.Text = Pou.Roll().ToString();
+            textResApp.Text = App.Roll().ToString();
+            textResEdu.Text = Edu.Roll().ToString();
         }
     }
 }
