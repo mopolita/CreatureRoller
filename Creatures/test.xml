@@ -4,33 +4,35 @@
 	<Creature>
 		<Name>Test Boi 1</Name>
 		<Stats>
-			<For>
+			<Stat>
+				<Name>Force</Name>
 				<Dice>3</Dice>
 				<Faces>6</Faces>
 				<Modifier>2</Modifier>
-			</For>
-			<Dex>
+			</Stat>
+			<Stat>
+				<Name>Dextérité</Name>
 				<Dice>2</Dice>
 				<Faces>8</Faces>
 				<Modifier>-1</Modifier>
-			</Dex>
+			</Stat>
 		</Stats>
 	</Creature>
 	<Creature>
 		<Name>Test Boi 2</Name>
 		<Stats>
-			<For>
+			<Stat>
+				<Name>Force</Name>
 				<Dice>1</Dice>
 				<Faces>6</Faces>
 				<Modifier>0</Modifier>
-			</For>
-			<Dex>
+			</Stat>
+			<Stat>
+				<Name>Dextérité</Name>
 				<Dice>2</Dice>
 				<Faces>4</Faces>
 				<Modifier>1</Modifier>
-			</Dex>
+			</Stat>
 		</Stats>
 	</Creature>
 </Creatures>
-
-

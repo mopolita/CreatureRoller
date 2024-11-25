@@ -109,9 +109,9 @@
             // 
             // boutonGenerer
             // 
-            boutonGenerer.Location = new Point(322, 424);
+            boutonGenerer.Location = new Point(324, 424);
             boutonGenerer.Name = "boutonGenerer";
-            boutonGenerer.Size = new Size(140, 48);
+            boutonGenerer.Size = new Size(138, 48);
             boutonGenerer.TabIndex = 18;
             boutonGenerer.Text = "Générer les statisiques";
             boutonGenerer.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             numericUpDownModFor.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModFor.Name = "numericUpDownModFor";
             numericUpDownModFor.ReadOnly = true;
-            numericUpDownModFor.Size = new Size(52, 27);
+            numericUpDownModFor.Size = new Size(54, 27);
             numericUpDownModFor.TabIndex = 58;
             // 
             // textResFor
@@ -151,7 +151,7 @@
             textResFor.Location = new Point(208, 144);
             textResFor.Name = "textResFor";
             textResFor.ReadOnly = true;
-            textResFor.Size = new Size(118, 27);
+            textResFor.Size = new Size(120, 27);
             textResFor.TabIndex = 64;
             // 
             // numericUpDownNbDex
@@ -180,7 +180,7 @@
             numericUpDownModDex.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModDex.Name = "numericUpDownModDex";
             numericUpDownModDex.ReadOnly = true;
-            numericUpDownModDex.Size = new Size(52, 27);
+            numericUpDownModDex.Size = new Size(54, 27);
             numericUpDownModDex.TabIndex = 63;
             // 
             // textResDex
@@ -188,7 +188,7 @@
             textResDex.Location = new Point(534, 144);
             textResDex.Name = "textResDex";
             textResDex.ReadOnly = true;
-            textResDex.Size = new Size(118, 27);
+            textResDex.Size = new Size(120, 27);
             textResDex.TabIndex = 70;
             // 
             // numericUpDownNbCon
@@ -217,7 +217,7 @@
             numericUpDownModCon.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModCon.Name = "numericUpDownModCon";
             numericUpDownModCon.ReadOnly = true;
-            numericUpDownModCon.Size = new Size(52, 27);
+            numericUpDownModCon.Size = new Size(54, 27);
             numericUpDownModCon.TabIndex = 62;
             // 
             // textResCon
@@ -225,7 +225,7 @@
             textResCon.Location = new Point(208, 263);
             textResCon.Name = "textResCon";
             textResCon.ReadOnly = true;
-            textResCon.Size = new Size(118, 27);
+            textResCon.Size = new Size(120, 27);
             textResCon.TabIndex = 66;
             // 
             // numericUpDownNbPou
@@ -254,7 +254,7 @@
             numericUpDownModPou.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModPou.Name = "numericUpDownModPou";
             numericUpDownModPou.ReadOnly = true;
-            numericUpDownModPou.Size = new Size(52, 27);
+            numericUpDownModPou.Size = new Size(54, 27);
             numericUpDownModPou.TabIndex = 59;
             // 
             // textResPou
@@ -262,7 +262,7 @@
             textResPou.Location = new Point(534, 263);
             textResPou.Name = "textResPou";
             textResPou.ReadOnly = true;
-            textResPou.Size = new Size(118, 27);
+            textResPou.Size = new Size(120, 27);
             textResPou.TabIndex = 72;
             // 
             // numericUpDownNbApp
@@ -291,7 +291,7 @@
             numericUpDownModApp.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModApp.Name = "numericUpDownModApp";
             numericUpDownModApp.ReadOnly = true;
-            numericUpDownModApp.Size = new Size(52, 27);
+            numericUpDownModApp.Size = new Size(54, 27);
             numericUpDownModApp.TabIndex = 61;
             // 
             // textResApp
@@ -299,7 +299,7 @@
             textResApp.Location = new Point(208, 368);
             textResApp.Name = "textResApp";
             textResApp.ReadOnly = true;
-            textResApp.Size = new Size(118, 27);
+            textResApp.Size = new Size(120, 27);
             textResApp.TabIndex = 68;
             // 
             // numericUpDownNbEdu
@@ -328,7 +328,7 @@
             numericUpDownModEdu.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numericUpDownModEdu.Name = "numericUpDownModEdu";
             numericUpDownModEdu.ReadOnly = true;
-            numericUpDownModEdu.Size = new Size(52, 27);
+            numericUpDownModEdu.Size = new Size(54, 27);
             numericUpDownModEdu.TabIndex = 60;
             // 
             // textResEdu
@@ -336,7 +336,7 @@
             textResEdu.Location = new Point(534, 368);
             textResEdu.Name = "textResEdu";
             textResEdu.ReadOnly = true;
-            textResEdu.Size = new Size(118, 27);
+            textResEdu.Size = new Size(120, 27);
             textResEdu.TabIndex = 74;
             // 
             // label1
@@ -502,7 +502,9 @@
             label18.Text = "Résultat :";
             // 
             // MainForm
-            // 
+            //
+            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 485);
