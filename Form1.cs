@@ -12,12 +12,13 @@ namespace CreatureRoller
 			Creatures = new List<Creature>();
 			Stats = new List<Stat>() { new Stat(), new Stat(), new Stat(), new Stat(), new Stat(), new Stat() };
 			Stats[0].Name = "Force";
-            Stats[1].Name = "Dex";
-            Stats[2].Name = "Con";
-            Stats[3].Name = "Pou";
-            Stats[4].Name = "App";
-            Stats[5].Name = "Edu";
+			Stats[1].Name = "Dex";
+			Stats[2].Name = "Con";
+			Stats[3].Name = "Pou";
+			Stats[4].Name = "App";
+			Stats[5].Name = "Edu";
 			InitializeComponent();
+			AddComboRanges();
 		}
 
 		private static List<Creature> LoadCreaturesFromXml(string filePath)
@@ -30,7 +31,7 @@ namespace CreatureRoller
 				.Select(c => new Creature(c.Element("Name")?.Value ?? "default_name", c.Element("Description")?.Value ?? "default_description",
 					c.Descendants("Stat").Select(s => new Stat
 					{
-						Name = s.Element("Name")?.Value ?? "default_name",
+						Name = s.Element("Name")?.Value ?? "N/A",
 						NumDice = int.Parse(s.Element("Dice")?.Value ?? "0"),
 						Faces = int.Parse(s.Element("Faces")?.Value ?? "0"),
 						Modifier = int.Parse(s.Element("Modifier")?.Value ?? "0")
@@ -48,7 +49,7 @@ namespace CreatureRoller
 				Title = "Sélectionner un fichier XML",
 				Filter = "Fichiers XML (*.xml)|*.xml", // Limiter aux fichiers .xml
 				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) // Répertoire initial
-            };
+			};
 
 			// Afficher la boîte de dialogue
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -67,13 +68,19 @@ namespace CreatureRoller
 				}
 			}
 
-			if (Creatures.Count < 6)
+			foreach (var creature in Creatures)
 			{
-				for (int i = Creatures.Count; i < 6; i++)
+				if (creature.StatList.Count < 6)
 				{
-					Creatures.Add(new Creature());
+					for (int i = creature.StatList.Count; i < 6; i++)
+					{
+						creature.StatList.Add(new Stat());
+					}
 				}
+				comboBoxName.Items.Add(creature.Name);
 			}
+
+			comboBoxName.SelectedIndex = 0;
 		}
 
 		private void boutonSauver_Click(object sender, EventArgs e)
@@ -83,29 +90,29 @@ namespace CreatureRoller
 
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-            Stats[0].NumDice = (int)numericUpDownNbFor.Value;
-            Stats[0].Faces = int.TryParse(comboFor.SelectedItem!.ToString().TrimStart('d', 'D'), out int d) ? d : 0;
-            Stats[0].Modifier = (int)numericUpDownModFor.Value;
+			Stats[0].NumDice = (int)numericUpDownNbFor.Value;
+			Stats[0].Faces = int.TryParse(comboFor.SelectedItem!.ToString().TrimStart('d', 'D'), out int d) ? d : 0;
+			Stats[0].Modifier = (int)numericUpDownModFor.Value;
 
-            Stats[1].NumDice = (int)numericUpDownNbDex.Value;
-            Stats[1].Faces = int.TryParse(comboDex.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-            Stats[1].Modifier = (int)numericUpDownModDex.Value;
+			Stats[1].NumDice = (int)numericUpDownNbDex.Value;
+			Stats[1].Faces = int.TryParse(comboDex.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+			Stats[1].Modifier = (int)numericUpDownModDex.Value;
 
-            Stats[2].NumDice = (int)numericUpDownNbCon.Value;
-            Stats[2].Faces = int.TryParse(comboCon.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-            Stats[2].Modifier = (int)numericUpDownModCon.Value;
+			Stats[2].NumDice = (int)numericUpDownNbCon.Value;
+			Stats[2].Faces = int.TryParse(comboCon.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+			Stats[2].Modifier = (int)numericUpDownModCon.Value;
 
-            Stats[3].NumDice = (int)numericUpDownNbPou.Value;
-            Stats[3].Faces = int.TryParse(comboPou.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-            Stats[3].Modifier = (int)numericUpDownModPou.Value;
+			Stats[3].NumDice = (int)numericUpDownNbPou.Value;
+			Stats[3].Faces = int.TryParse(comboPou.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+			Stats[3].Modifier = (int)numericUpDownModPou.Value;
 
-            Stats[4].NumDice = (int)numericUpDownNbApp.Value;
-            Stats[4].Faces = int.TryParse(comboApp.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-            Stats[4].Modifier = (int)numericUpDownModApp.Value;
+			Stats[4].NumDice = (int)numericUpDownNbApp.Value;
+			Stats[4].Faces = int.TryParse(comboApp.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+			Stats[4].Modifier = (int)numericUpDownModApp.Value;
 
-            Stats[5].NumDice = (int)numericUpDownNbEdu.Value;
-            Stats[5].Faces = int.TryParse(comboEdu.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-            Stats[5].Modifier = (int)numericUpDownModEdu.Value;
+			Stats[5].NumDice = (int)numericUpDownNbEdu.Value;
+			Stats[5].Faces = int.TryParse(comboEdu.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
+			Stats[5].Modifier = (int)numericUpDownModEdu.Value;
 
 			textResFor.Text = Stats[0].Roll().ToString();
 			textResDex.Text = Stats[1].Roll().ToString();
@@ -113,6 +120,45 @@ namespace CreatureRoller
 			textResPou.Text = Stats[3].Roll().ToString();
 			textResApp.Text = Stats[4].Roll().ToString();
 			textResEdu.Text = Stats[5].Roll().ToString();
+		}
+
+		private void comboBoxName_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			int selected = comboBoxName.SelectedIndex;
+			Creature active = Creatures[selected];
+			for (int i = 0; i < active.StatList.Count; i++)
+			{
+				Stats[i].NumDice = active.StatList[i].NumDice;
+				Stats[i].Faces = active.StatList[i].Faces;
+				Stats[i].Modifier = active.StatList[i].Modifier;
+				// Should also change the two updowns and the combo, but that would require more work
+				// Mayby by using the FormStat class
+			}
+		}
+	}
+
+	public class FormStat
+	{
+		public Label LabelStat;
+		public NumericUpDown NumericUpDownNb;
+		public ComboBox ComboStat;
+		public NumericUpDown NumericUpDownMod;
+		public readonly Label Resultat;
+		public TextBox TextResultat;
+
+		public FormStat()
+		{
+			LabelStat = new Label();
+			NumericUpDownNb = new NumericUpDown();
+			NumericUpDownMod = new NumericUpDown();
+			ComboStat = new ComboBox();
+			Resultat = new Label();
+			TextResultat = new TextBox();
+		}
+
+		public void UpdateFormStat(Stat stat)
+		{
+
 		}
 	}
 }
