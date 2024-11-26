@@ -4,9 +4,9 @@
 	{
 		private static Random random = new Random();
 		public string Name { get; set; }
-		public int NumDice { get; set; } // Nombre de dés
-		public int Faces { get; set; } // Type de dé (ex. 4 pour d4, 6 pour d6)
-		public int Modifier { get; set; } // Modificateur
+		public int NumDice { get; set; }
+		public int Faces { get; set; }
+		public int Modifier { get; set; }
 
 		/// <summary>
 		/// Constructeur qui prend les valeurs sous forme de chaînes
