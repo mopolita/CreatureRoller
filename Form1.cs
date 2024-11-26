@@ -4,6 +4,7 @@ namespace CreatureRoller
 {
 	public partial class MainForm : Form
 	{
+		private readonly List<string> dice = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
 		public List<Creature> Creatures;
 		List<Stat> Stats;
 
@@ -134,31 +135,6 @@ namespace CreatureRoller
 				// Should also change the two updowns and the combo, but that would require more work
 				// Mayby by using the FormStat class
 			}
-		}
-	}
-
-	public class FormStat
-	{
-		public Label LabelStat;
-		public NumericUpDown NumericUpDownNb;
-		public ComboBox ComboStat;
-		public NumericUpDown NumericUpDownMod;
-		public readonly Label Resultat;
-		public TextBox TextResultat;
-
-		public FormStat()
-		{
-			LabelStat = new Label();
-			NumericUpDownNb = new NumericUpDown();
-			NumericUpDownMod = new NumericUpDown();
-			ComboStat = new ComboBox();
-			Resultat = new Label();
-			TextResultat = new TextBox();
-		}
-
-		public void UpdateFormStat(Stat stat)
-		{
-
 		}
 	}
 }
