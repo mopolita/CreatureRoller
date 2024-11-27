@@ -30,7 +30,7 @@ namespace CreatureRoller
 				ReadOnly = true,
 				Size = new Size(48, 27),
 				TabIndex = 0,
-				Value = new decimal(new int[] { 1, 0, 0, 0 }),
+				Value = new decimal(new int[] { 1, 0, 0, 0 })
 			};
 
 			ComboStat = new ComboBox
@@ -79,7 +79,7 @@ namespace CreatureRoller
 		public void UpdateStat(Stat stat) 
 		{
 			Stat = stat;
-			NumericUpDownNb = Value = new decimal(new int[] { 1, 0, 0, 0 });
+			NumericUpDownNb.Value = new decimal(new int[] { 1, 0, 0, 0 });
 
         }
 	}
