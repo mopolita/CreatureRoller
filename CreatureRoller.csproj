@@ -1,31 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<!-- Cible valide -->
-		<TargetFramework>net8.0-windows</TargetFramework>
 		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Version pour prérelease -->
+		<Version>1.0.0-beta</Version>
+
+		<!-- Informations sur l'application -->
+		<Authors>mopolita</Authors>
+		<Product>CreatureRoller</Product>
+		<Description>CreatureRoller est un générateur de statistiques pour l'Appel de Cthulhu.</Description>
 
 		<!-- Configurations pour un exécutable autonome -->
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<PublishSingleFile>true</PublishSingleFile>
-
-		<!-- Activer Windows Forms -->
-		<UseWindowsForms>true</UseWindowsForms>
-
-		<!-- Directives using automatiques -->
-		<ImplicitUsings>enable</ImplicitUsings>
-
-		<!-- Mode Release pour optimiser les performances -->
-		<Configuration>Release</Configuration>
-
-		<!-- Désactiver l'optimisation IL car elle pose problème avec Windows Forms -->
-		<PublishTrimmed>false</PublishTrimmed>
-		<TrimMode>link</TrimMode>
+		<SelfContained>true</SelfContained>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<!-- Spécifier une version explicite de System.Windows.Forms -->
-		<PackageReference Include="System.Windows.Forms" />
-	</ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'PreRelease'">
+		<DefineConstants>PRE_RELEASE</DefineConstants>
+	</PropertyGroup>
 
 </Project>
