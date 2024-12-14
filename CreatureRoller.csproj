@@ -7,19 +7,14 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 
-		<!-- Version pour prérelease -->
 		<Version>1.0.0-beta</Version>
 
-		<!-- Informations sur l'application -->
 		<Authors>mopolita</Authors>
 		<Product>CreatureRoller</Product>
 		<Description>CreatureRoller est un générateur de statistiques pour l'Appel de Cthulhu.</Description>
 
-		<!-- Configurations pour un exécutable autonome -->
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<PublishSingleFile>true</PublishSingleFile>
-		<SelfContained>true</SelfContained>
-		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
 	</PropertyGroup>
 
