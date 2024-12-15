@@ -10,7 +10,7 @@ namespace CreatureRoller
 
 		public MainForm()
 		{
-			List<string> noms = new List<string> { "For" , "Dex" , "Con" , "Pou" , "App" , "Edu" };
+			List<string> noms = new List<string> { "For", "Dex", "Con", "Pou", "App", "Edu" };
 
 			Stat stat = new Stat();
 			Creatures = new List<Creature>();
@@ -28,7 +28,7 @@ namespace CreatureRoller
 			int x, y;
 			Groupe groupe;
 			x = number % 2 == 0 ? 136 : 462;
-			y = 87 + 118 * (number / 2);
+			y = 87 + 110 * (number / 2);
 			groupe = new Groupe(stat, new Point(x, y));
 			groupe.AddTo(this);
 			Groupes.Add(groupe);
@@ -68,12 +68,26 @@ namespace CreatureRoller
 				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 			};
 
-			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			if (openFileDialog.ShowDialog() == DialogResult.OK) // Vérifie si l'utilisateur a cliqué sur "OK"
 			{
 				string selectedFile = openFileDialog.FileName;
 				try
 				{
+					// Charger les créatures à partir du fichier XML
 					LoadCreaturesFromXml(selectedFile);
+
+					// Mettre à jour la comboBox uniquement si le fichier est chargé avec succès
+					comboBoxCreatures.Items.Clear(); // Nettoyer les éléments précédents
+					foreach (var creature in Creatures)
+					{
+						comboBoxCreatures.Items.Add(creature.Name);
+					}
+
+					// Sélectionner le premier élément s'il y en a
+					if (comboBoxCreatures.Items.Count > 0)
+					{
+						comboBoxCreatures.SelectedIndex = 0;
+					}
 					MessageBox.Show($"Fichier chargé avec succès : {selectedFile}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
@@ -81,15 +95,12 @@ namespace CreatureRoller
 					MessageBox.Show($"Erreur lors du chargement du fichier : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
-			foreach (var creature in Creatures)
-			{
-				comboBoxCreatures.Items.Add(creature.Name);
-			}
-			comboBoxCreatures.SelectedIndex = 0;
 		}
+
 
 		private void BoutonSauver_Click(object sender, EventArgs e)
 		{
+			MessageBox.Show("TODO", "Info", MessageBoxButtons.OK);
 
 		}
 
@@ -108,6 +119,7 @@ namespace CreatureRoller
 			Creature active = Creatures[selected];
 			int groupeSize = Groupes.Count;
 			int statListSize = active.StatList.Count;
+			
 			// Ajoute des groupes de stats jusqu'a en avoir le même nombre que celui des stats des créatures
 			for (i = 0; i < statListSize - groupeSize; i++)
 			{
@@ -124,6 +136,37 @@ namespace CreatureRoller
 			{
 				Groupes[i].UpdateGroupe(active.StatList[i]);
 			}
+		}
+
+		private string ShowNameInputPopup()
+		{
+			string enteredName;
+			using var nameInputForm = new NameInputForm();
+			
+			// Affiche le popup
+			var result = nameInputForm.ShowDialog();
+
+			// Vérifie si l'utilisateur a cliqué sur "OK"
+			if (result == DialogResult.OK)
+			{
+				enteredName = nameInputForm.EnteredName;
+				return enteredName;
+			}
+			return "";
+		}
+
+		private void AjouterStat_Click(object sender, EventArgs e)
+		{
+			string name = ShowNameInputPopup();
+			if (name != "")
+			{
+				Addgroupe(new Stat(1, 6, 0, name), Groupes.Count);
+			}
+		}
+
+		private void EnleverStat_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("TODO", "Info", MessageBoxButtons.OK);
 		}
 	}
 }

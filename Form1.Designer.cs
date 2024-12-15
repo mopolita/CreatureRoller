@@ -32,6 +32,8 @@
             boutonSauver = new Button();
             boutonGenerer = new Button();
             comboBoxCreatures = new ComboBox();
+            AjouterStat = new Button();
+            EnleverStat = new Button();
             SuspendLayout();
             // 
             // boutonCharger
@@ -46,9 +48,9 @@
             // 
             // boutonSauver
             // 
-            boutonSauver.Location = new Point(653, 15);
+            boutonSauver.Location = new Point(653, 12);
             boutonSauver.Name = "boutonSauver";
-            boutonSauver.Size = new Size(135, 53);
+            boutonSauver.Size = new Size(135, 56);
             boutonSauver.TabIndex = 1;
             boutonSauver.Text = "Sauvegarder un modèle";
             boutonSauver.UseVisualStyleBackColor = true;
@@ -73,11 +75,33 @@
             comboBoxCreatures.TabIndex = 76;
             comboBoxCreatures.SelectedIndexChanged += ComboBoxCreatures_SelectedIndexChanged;
             // 
+            // AjouterStat
+            // 
+            AjouterStat.Location = new Point(184, 12);
+            AjouterStat.Name = "AjouterStat";
+            AjouterStat.Size = new Size(94, 56);
+            AjouterStat.TabIndex = 77;
+            AjouterStat.Text = "Ajouter une stat";
+            AjouterStat.UseVisualStyleBackColor = true;
+            AjouterStat.Click += AjouterStat_Click;
+            // 
+            // EnleverStat
+            // 
+            EnleverStat.Location = new Point(509, 12);
+            EnleverStat.Name = "EnleverStat";
+            EnleverStat.Size = new Size(94, 56);
+            EnleverStat.TabIndex = 78;
+            EnleverStat.Text = "Enlever une stat";
+            EnleverStat.UseVisualStyleBackColor = true;
+            EnleverStat.Click += EnleverStat_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 485);
+            Controls.Add(EnleverStat);
+            Controls.Add(AjouterStat);
             Controls.Add(comboBoxCreatures);
             Controls.Add(boutonGenerer);
             Controls.Add(boutonSauver);
@@ -95,5 +119,7 @@
 		private Button boutonSauver;
 		private Button boutonGenerer;
 		private ComboBox comboBoxCreatures;
-	}
+        private Button AjouterStat;
+        private Button EnleverStat;
+    }
 }
