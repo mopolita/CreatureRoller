@@ -6,20 +6,26 @@ namespace CreatureRoller
 	{
 		private readonly List<string> dice = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
 		public List<Creature> Creatures;
-		List<Stat> Stats;
+		public List<Groupe> Groupes;
 
 		public MainForm()
 		{
+			List<string> noms = new List<string> { "For" , "Dex" , "Con" , "Pou" , "App" , "Edu" };
+			Groupe groupe;
+			Stat stat = new Stat();
+			int x, y;
 			Creatures = new List<Creature>();
-			Stats = new List<Stat>() { new Stat(), new Stat(), new Stat(), new Stat(), new Stat(), new Stat() };
-			Stats[0].Name = "Force";
-			Stats[1].Name = "Dex";
-			Stats[2].Name = "Con";
-			Stats[3].Name = "Pou";
-			Stats[4].Name = "App";
-			Stats[5].Name = "Edu";
+			Groupes = new List<Groupe>();
+			for (int i = 0; i < 6; i++)
+			{
+				x = i%2==0 ? 136 : 462;
+				y = 87 + 118 * (i/2);
+				stat.Name = noms[i];
+				groupe = new Groupe(stat, new Point(x, y));
+				groupe.AddTo(this);
+				Groupes.Add(groupe);
+			}
 			InitializeComponent();
-			AddComboRanges();
 		}
 
 		private static List<Creature> LoadCreaturesFromXml(string filePath)
@@ -78,10 +84,10 @@ namespace CreatureRoller
 						creature.StatList.Add(new Stat());
 					}
 				}
-				comboBoxName.Items.Add(creature.Name);
+				comboBoxCreatures.Items.Add(creature.Name);
 			}
 
-			comboBoxName.SelectedIndex = 0;
+			comboBoxCreatures.SelectedIndex = 0;
 		}
 
 		private void boutonSauver_Click(object sender, EventArgs e)
@@ -91,41 +97,15 @@ namespace CreatureRoller
 
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-			Stats[0].NumDice = (int)numericUpDownNbFor.Value;
-			Stats[0].Faces = int.TryParse(comboFor.SelectedItem!.ToString().TrimStart('d', 'D'), out int d) ? d : 0;
-			Stats[0].Modifier = (int)numericUpDownModFor.Value;
+            foreach (var groupe in Groupes)
+            {
+				groupe.Roll();
+            }
+        }
 
-			Stats[1].NumDice = (int)numericUpDownNbDex.Value;
-			Stats[1].Faces = int.TryParse(comboDex.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-			Stats[1].Modifier = (int)numericUpDownModDex.Value;
-
-			Stats[2].NumDice = (int)numericUpDownNbCon.Value;
-			Stats[2].Faces = int.TryParse(comboCon.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-			Stats[2].Modifier = (int)numericUpDownModCon.Value;
-
-			Stats[3].NumDice = (int)numericUpDownNbPou.Value;
-			Stats[3].Faces = int.TryParse(comboPou.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-			Stats[3].Modifier = (int)numericUpDownModPou.Value;
-
-			Stats[4].NumDice = (int)numericUpDownNbApp.Value;
-			Stats[4].Faces = int.TryParse(comboApp.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-			Stats[4].Modifier = (int)numericUpDownModApp.Value;
-
-			Stats[5].NumDice = (int)numericUpDownNbEdu.Value;
-			Stats[5].Faces = int.TryParse(comboEdu.SelectedItem!.ToString().TrimStart('d', 'D'), out d) ? d : 0;
-			Stats[5].Modifier = (int)numericUpDownModEdu.Value;
-
-			textResFor.Text = Stats[0].Roll().ToString();
-			textResDex.Text = Stats[1].Roll().ToString();
-			textResCon.Text = Stats[2].Roll().ToString();
-			textResPou.Text = Stats[3].Roll().ToString();
-			textResApp.Text = Stats[4].Roll().ToString();
-			textResEdu.Text = Stats[5].Roll().ToString();
-		}
-
-		private void comboBoxName_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxName_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			int selected = comboBoxName.SelectedIndex;
+            /*int selected = comboBoxName.SelectedIndex;
 			Creature active = Creatures[selected];
 			for (int i = 0; i < active.StatList.Count; i++)
 			{
@@ -133,8 +113,7 @@ namespace CreatureRoller
 				Stats[i].Faces = active.StatList[i].Faces;
 				Stats[i].Modifier = active.StatList[i].Modifier;
 				// Should also change the two updowns and the combo, but that would require more work
-				// Mayby by using the FormStat class
-			}
-		}
-	}
+				// Mayby by using the FormStat class*/
+        }
+    }
 }

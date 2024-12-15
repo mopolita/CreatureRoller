@@ -4,25 +4,27 @@
 	{
 		private readonly List<string> comboRange = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
 
-        public GroupBox StatBox;
+        private GroupBox StatBox;
 		private NumericUpDown NumericUpDownNb;
 		private ComboBox ComboStat;
 		private NumericUpDown NumericUpDownMod;
 		private readonly Label Resultat;
 		private TextBox TextResultat;
+		private Stat Stat;
 
 		public Groupe(Stat stat, Point location)
 		{
+			Stat = stat;
 			StatBox = new GroupBox
 			{
 				Text = stat.Name,
 				Location = location,
-				Size = new Size(195, 60)
+				Size = new Size(198, 80)
 			};
 
 			NumericUpDownNb = new NumericUpDown
 			{
-				Location = new Point(2, 1),
+				Location = new Point(2, 20),
 				ReadOnly = true,
 				Size = new Size(48, 27),
 				TabIndex = 0,
@@ -33,7 +35,7 @@
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
 				FormattingEnabled = true,
-				Location = new Point(56, 1),
+				Location = new Point(56, 20),
 				Name = "comboFor",
 				Size = new Size(62, 27),
 				TabIndex = 1
@@ -41,25 +43,25 @@
 
 			NumericUpDownMod = new NumericUpDown
 			{
-				Location = new Point(140, 1),
+				Location = new Point(140, 20),
 				ReadOnly = true,
 				Size = new Size(54, 27),
 				TabIndex = 2
 			};
 
 			ComboStat.Items.AddRange(comboRange.ToArray());
-			ComboStat.SelectedIndex = 0;
+			ComboStat.SelectedIndex = 1;
 
 			Resultat = new Label
 			{
-				Location = new Point(2, 39),
+				Location = new Point(2, 50),
 				Text = "Résultat :",
 				Size = new Size(69,20)
 			};
 
 			TextResultat = new TextBox
 			{
-				Location = new Point(74, 36),
+				Location = new Point(74, 50),
 				ReadOnly = true,
 				Size = new Size(120, 27),
 				TabIndex = 3
@@ -107,10 +109,30 @@
 
 		public void UpdateGroupe(Stat stat) 
 		{
+			Stat = stat;
 			NumericUpDownNb.Value = new decimal(stat.NumDice);
 			NumericUpDownMod.Value = new decimal(stat.Modifier);
 			StatBox.Text = stat.Name;
             ComboStat.SelectedIndex = FacesToIndex(stat.Faces);
+        }
+
+		public void AddTo(Control control)
+		{
+			control.Controls.Add(StatBox);
+		}
+
+		public void RemoveFrom(Control control)
+		{
+			control.Controls.Remove(StatBox);
+		}
+
+		public void Roll()
+		{
+            Stat.NumDice = (int)NumericUpDownNb.Value;
+            Stat.Faces = int.TryParse(ComboStat.SelectedItem!.ToString().TrimStart('d', 'D'), out int d) ? d : 0;
+            Stat.Modifier = (int)NumericUpDownMod.Value;
+
+            TextResultat.Text = Stat.Roll().ToString();
         }
 	}
 }
