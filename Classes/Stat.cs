@@ -25,9 +25,9 @@
 
 		public Stat()
 		{
-			Name = "N/A";
+			Name = "default_name";
 			NumDice = 1;
-			Faces = 4;
+			Faces = 6;
 			Modifier = 1;
 		}
 

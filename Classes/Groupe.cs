@@ -8,13 +8,26 @@
 		private NumericUpDown NumericUpDownNb;
 		private ComboBox ComboStat;
 		private NumericUpDown NumericUpDownMod;
-		private readonly Label Resultat;
 		private TextBox TextResultat;
 		private Stat Stat;
 
 		public Groupe(Stat stat, Point location)
 		{
-			Stat = stat;
+            Label resultat = new Label
+            {
+                Location = new Point(2, 50),
+                Text = "Résultat :",
+                Size = new Size(69, 20)
+            };
+
+            Label plus = new Label
+            {
+                Location = new Point(120, 20),
+                Text = "+",
+                Size = new Size(15, 20)
+            };
+
+            Stat = stat;
 			StatBox = new GroupBox
 			{
 				Text = stat.Name,
@@ -46,18 +59,12 @@
 				Location = new Point(140, 20),
 				ReadOnly = true,
 				Size = new Size(54, 27),
-				TabIndex = 2
+				TabIndex = 2,
+				Minimum = -100
 			};
 
 			ComboStat.Items.AddRange(comboRange.ToArray());
 			ComboStat.SelectedIndex = 1;
-
-			Resultat = new Label
-			{
-				Location = new Point(2, 50),
-				Text = "Résultat :",
-				Size = new Size(69,20)
-			};
 
 			TextResultat = new TextBox
 			{
@@ -71,7 +78,8 @@
             StatBox.Controls.Add(NumericUpDownNb);
             StatBox.Controls.Add(NumericUpDownMod);
 			StatBox.Controls.Add(TextResultat);
-			StatBox.Controls.Add(Resultat);
+			StatBox.Controls.Add(resultat);
+			StatBox.Controls.Add(plus);
 		}
 
 		private int FacesToIndex(int faces)
