@@ -11,29 +11,41 @@ namespace CreatureRoller
 		public MainForm()
 		{
 			List<string> noms = new List<string> { "For" , "Dex" , "Con" , "Pou" , "App" , "Edu" };
-			Groupe groupe;
+
 			Stat stat = new Stat();
-			int x, y;
 			Creatures = new List<Creature>();
 			Groupes = new List<Groupe>();
 			for (int i = 0; i < 6; i++)
 			{
-				x = i%2==0 ? 136 : 462;
-				y = 87 + 118 * (i/2);
 				stat.Name = noms[i];
-				groupe = new Groupe(stat, new Point(x, y));
-				groupe.AddTo(this);
-				Groupes.Add(groupe);
+				Addgroupe(stat, i);
 			}
 			InitializeComponent();
 		}
 
-		private static List<Creature> LoadCreaturesFromXml(string filePath)
+		private void Addgroupe(Stat stat, int number)
 		{
-			// Charger le fichier XML
+			int x, y;
+			Groupe groupe;
+			x = number % 2 == 0 ? 136 : 462;
+			y = 87 + 118 * (number / 2);
+			groupe = new Groupe(stat, new Point(x, y));
+			groupe.AddTo(this);
+			Groupes.Add(groupe);
+		}
+
+		private void RemoveGroupe(int index)
+		{
+			Groupes[index].RemoveFrom(this);
+			Groupes.RemoveAt(index);
+		}
+
+		private void LoadCreaturesFromXml(string filePath)
+		{
+			// charge le fichier XML
 			XDocument doc = XDocument.Load(filePath);
 
-			// Utiliser LINQ pour extraire les créatures
+			// extrait les créatures
 			var creatures = doc.Descendants("Creature")
 				.Select(c => new Creature(c.Element("Name")?.Value ?? "default_name", c.Element("Description")?.Value ?? "default_description",
 					c.Descendants("Stat").Select(s => new Stat
@@ -44,29 +56,24 @@ namespace CreatureRoller
 						Modifier = int.Parse(s.Element("Modifier")?.Value ?? "0")
 					}).ToList()))
 				.ToList();
-
-			return creatures;
+			Creatures = creatures;
 		}
 
 		private void BoutonCharger_Click(object sender, EventArgs e)
 		{
-			// Créer une instance de OpenFileDialog
 			OpenFileDialog openFileDialog = new OpenFileDialog
 			{
 				Title = "Sélectionner un fichier XML",
 				Filter = "Fichiers XML (*.xml)|*.xml", // Limiter aux fichiers .xml
-				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) // Répertoire initial
+				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 			};
 
-			// Afficher la boîte de dialogue
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				string selectedFile = openFileDialog.FileName;
-
 				try
 				{
-					// Appeler la méthode pour charger le fichier
-					Creatures = LoadCreaturesFromXml(selectedFile);
+					LoadCreaturesFromXml(selectedFile);
 					MessageBox.Show($"Fichier chargé avec succès : {selectedFile}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
@@ -74,46 +81,49 @@ namespace CreatureRoller
 					MessageBox.Show($"Erreur lors du chargement du fichier : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
-
 			foreach (var creature in Creatures)
 			{
-				if (creature.StatList.Count < 6)
-				{
-					for (int i = creature.StatList.Count; i < 6; i++)
-					{
-						creature.StatList.Add(new Stat());
-					}
-				}
 				comboBoxCreatures.Items.Add(creature.Name);
 			}
-
 			comboBoxCreatures.SelectedIndex = 0;
 		}
 
-		private void boutonSauver_Click(object sender, EventArgs e)
+		private void BoutonSauver_Click(object sender, EventArgs e)
 		{
 
 		}
 
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-            foreach (var groupe in Groupes)
-            {
-				groupe.Roll();
-            }
-        }
-
-        private void comboBoxName_SelectedIndexChanged(object sender, EventArgs e)
-		{
-            /*int selected = comboBoxName.SelectedIndex;
-			Creature active = Creatures[selected];
-			for (int i = 0; i < active.StatList.Count; i++)
+			foreach (var groupe in Groupes)
 			{
-				Stats[i].NumDice = active.StatList[i].NumDice;
-				Stats[i].Faces = active.StatList[i].Faces;
-				Stats[i].Modifier = active.StatList[i].Modifier;
-				// Should also change the two updowns and the combo, but that would require more work
-				// Mayby by using the FormStat class*/
-        }
-    }
+				groupe.Roll();
+			}
+		}
+
+		private void ComboBoxCreatures_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			int i = 0;
+			int selected = comboBoxCreatures.SelectedIndex;
+			Creature active = Creatures[selected];
+			int groupeSize = Groupes.Count;
+			int statListSize = active.StatList.Count;
+			// Ajoute des groupes de stats jusqu'a en avoir le même nombre que celui des stats des créatures
+			for (i = 0; i < statListSize - groupeSize; i++)
+			{
+				Addgroupe(active.StatList[i], i + groupeSize);
+			}
+			// Enlève des groupes de stats jusqu'a en avoir le même nombre que celui des stats des créatures
+			groupeSize = Groupes.Count;
+			while (statListSize != groupeSize)
+			{
+				RemoveGroupe(groupeSize - 1);
+				groupeSize = Groupes.Count;
+			}
+			for (i = 0; i < statListSize; i++)
+			{
+				Groupes[i].UpdateGroupe(active.StatList[i]);
+			}
+		}
+	}
 }

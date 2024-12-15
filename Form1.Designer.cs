@@ -52,7 +52,7 @@
             boutonSauver.TabIndex = 1;
             boutonSauver.Text = "Sauvegarder un modèle";
             boutonSauver.UseVisualStyleBackColor = true;
-            boutonSauver.Click += boutonSauver_Click;
+            boutonSauver.Click += BoutonSauver_Click;
             // 
             // boutonGenerer
             // 
@@ -71,7 +71,7 @@
             comboBoxCreatures.Name = "comboBoxCreatures";
             comboBoxCreatures.Size = new Size(138, 28);
             comboBoxCreatures.TabIndex = 76;
-            comboBoxCreatures.SelectedIndexChanged += comboBoxName_SelectedIndexChanged;
+            comboBoxCreatures.SelectedIndexChanged += ComboBoxCreatures_SelectedIndexChanged;
             // 
             // MainForm
             // 
