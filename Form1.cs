@@ -45,7 +45,7 @@ namespace CreatureRoller
 			// charge le fichier XML
 			XDocument doc = XDocument.Load(filePath);
 
-			// extrait les créatures
+			// extrait les crÃ©atures
 			var creatures = doc.Descendants("Creature")
 				.Select(c => new Creature(c.Element("Name")?.Value ?? "default_name", c.Element("Description")?.Value ?? "default_description",
 					c.Descendants("Stat").Select(s => new Stat
@@ -63,32 +63,32 @@ namespace CreatureRoller
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog
 			{
-				Title = "Sélectionner un fichier XML",
+				Title = "SÃ©lectionner un fichier XML",
 				Filter = "Fichiers XML (*.xml)|*.xml", // Limiter aux fichiers .xml
 				InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 			};
 
-			if (openFileDialog.ShowDialog() == DialogResult.OK) // Vérifie si l'utilisateur a cliqué sur "OK"
+			if (openFileDialog.ShowDialog() == DialogResult.OK) // VÃ©rifie si l'utilisateur a cliquÃ© sur "OK"
 			{
 				string selectedFile = openFileDialog.FileName;
 				try
 				{
-					// Charger les créatures à partir du fichier XML
+					// Charger les crÃ©atures Ã  partir du fichier XML
 					LoadCreaturesFromXml(selectedFile);
 
-					// Mettre à jour la comboBox uniquement si le fichier est chargé avec succès
-					comboBoxCreatures.Items.Clear(); // Nettoyer les éléments précédents
+					// Mettre Ã  jour la comboBox uniquement si le fichier est chargÃ© avec succÃ¨s
+					comboBoxCreatures.Items.Clear(); // Nettoyer les Ã©lÃ©ments prÃ©cÃ©dents
 					foreach (var creature in Creatures)
 					{
 						comboBoxCreatures.Items.Add(creature.Name);
 					}
 
-					// Sélectionner le premier élément s'il y en a
+					// SÃ©lectionner le premier Ã©lÃ©ment s'il y en a
 					if (comboBoxCreatures.Items.Count > 0)
 					{
 						comboBoxCreatures.SelectedIndex = 0;
 					}
-					MessageBox.Show($"Fichier chargé avec succès : {selectedFile}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show($"Fichier chargÃ© avec succÃ¨s : {selectedFile}", "SuccÃ¨s", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				catch (Exception ex)
 				{
@@ -120,12 +120,12 @@ namespace CreatureRoller
 			int groupeSize = Groupes.Count;
 			int statListSize = active.StatList.Count;
 			
-			// Ajoute des groupes de stats jusqu'a en avoir le même nombre que celui des stats des créatures
+			// Ajoute des groupes de stats jusqu'a en avoir le mÃªme nombre que celui des stats des crÃ©atures
 			for (i = 0; i < statListSize - groupeSize; i++)
 			{
 				Addgroupe(active.StatList[i], i + groupeSize);
 			}
-			// Enlève des groupes de stats jusqu'a en avoir le même nombre que celui des stats des créatures
+			// EnlÃ¨ve des groupes de stats jusqu'a en avoir le mÃªme nombre que celui des stats des crÃ©atures
 			groupeSize = Groupes.Count;
 			while (statListSize != groupeSize)
 			{
@@ -146,7 +146,7 @@ namespace CreatureRoller
 			// Affiche le popup
 			var result = nameInputForm.ShowDialog();
 
-			// Vérifie si l'utilisateur a cliqué sur "OK"
+			// VÃ©rifie si l'utilisateur a cliquÃ© sur "OK"
 			if (result == DialogResult.OK)
 			{
 				enteredName = nameInputForm.EnteredName;

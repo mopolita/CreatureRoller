@@ -15,14 +15,14 @@
 		{
             Label resultat = new Label
             {
-                Location = new Point(2, 50),
+                Location = new Point(1, 57),
                 Text = "Résultat :",
                 Size = new Size(69, 20)
             };
 
             Label plus = new Label
             {
-                Location = new Point(120, 20),
+                Location = new Point(122, 23),
                 Text = "+",
                 Size = new Size(15, 20)
             };
@@ -32,7 +32,7 @@
 			{
 				Text = stat.Name,
 				Location = location,
-				Size = new Size(198, 80)
+				Size = new Size(200, 90)
 			};
 
 			NumericUpDownNb = new NumericUpDown
@@ -68,7 +68,7 @@
 
 			TextResultat = new TextBox
 			{
-				Location = new Point(74, 50),
+				Location = new Point(74, 52),
 				ReadOnly = true,
 				Size = new Size(120, 27),
 				TabIndex = 3

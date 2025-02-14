@@ -60,7 +60,7 @@
             // 
             boutonGenerer.Location = new Point(324, 424);
             boutonGenerer.Name = "boutonGenerer";
-            boutonGenerer.Size = new Size(138, 48);
+            boutonGenerer.Size = new Size(135, 60);
             boutonGenerer.TabIndex = 18;
             boutonGenerer.Text = "Générer les statistiques";
             boutonGenerer.UseVisualStyleBackColor = true;
@@ -99,15 +99,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 485);
+            ClientSize = new Size(800, 490);
+            MinimumSize = new Size(820, 520);
             Controls.Add(EnleverStat);
             Controls.Add(AjouterStat);
             Controls.Add(comboBoxCreatures);
             Controls.Add(boutonGenerer);
             Controls.Add(boutonSauver);
             Controls.Add(boutonCharger);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            //MaximizeBox = false;
             Name = "MainForm";
             Text = "Lovecraftian Creature Roller";
             ResumeLayout(false);

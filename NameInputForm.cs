@@ -3,9 +3,9 @@
 
 	public class NameInputForm : Form
 	{
-		private TextBox nameTextBox;
-		private Button okButton;
-		private Button cancelButton;
+		private readonly TextBox nameTextBox;
+		private readonly Button okButton;
+		private readonly Button cancelButton;
 
 		public string EnteredName { get; private set; }
 
@@ -54,7 +54,7 @@
 			CancelButton = cancelButton; // Permet d'utiliser Échap pour annuler
 		}
 
-		private void OkButton_Click(object sender, EventArgs e)
+		private void OkButton_Click(object? sender, EventArgs e)
 		{
 			EnteredName = nameTextBox.Text; // Récupérer le texte entré
 			DialogResult = DialogResult.OK; // Indiquer que l'utilisateur a validé

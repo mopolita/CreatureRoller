@@ -8,9 +8,9 @@ namespace CreatureRoller
 	/// </summary>
 	public class Creature
 	{
-		public string Name { get; set; }
-		public string Description { get; set; }
-		public List<Stat> StatList { get;set; }
+		public string Name { get; }
+		public string Description { get; }
+		public List<Stat> StatList { get; }
 
 		public Creature()
 		{
