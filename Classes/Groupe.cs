@@ -2,7 +2,7 @@
 {
 	public class Groupe
 	{
-		private readonly List<string> comboRange = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
+		private static readonly List<string> comboRange = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
 
         private GroupBox StatBox;
 		private NumericUpDown NumericUpDownNb;
@@ -87,9 +87,6 @@
 			int index = 0;
             switch (faces)
             {
-                case 4:
-					index = 0;
-					break;
                 case 6:
                     index = 1;
                     break;
@@ -108,6 +105,7 @@
 				case 100:
                     index = 6;
                     break;
+				case 4:
                 default:
                     index = 0;
                     break;

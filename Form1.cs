@@ -4,7 +4,6 @@ namespace CreatureRoller
 {
 	public partial class MainForm : Form
 	{
-		private readonly List<string> dice = new List<string> { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
 		public List<Creature> Creatures;
 		public List<Groupe> Groupes;
 
@@ -38,6 +37,13 @@ namespace CreatureRoller
 		{
 			Groupes[index].RemoveFrom(this);
 			Groupes.RemoveAt(index);
+		}
+
+		private void updateSize(int nbGroupes){
+			int x = 790;
+			int y = 147 + 110 * (nbGroupes / 2);
+			MinimumSize = new Size(x+30, y+30);
+			ClientSize = new Size(x, y);
 		}
 
 		private void LoadCreaturesFromXml(string filePath)
@@ -160,6 +166,7 @@ namespace CreatureRoller
 			string name = ShowNameInputPopup();
 			if (name != "")
 			{
+				updateSize(Groupes.Count + 1);
 				Addgroupe(new Stat(1, 6, 0, name), Groupes.Count);
 			}
 		}

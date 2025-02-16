@@ -99,8 +99,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 490);
-            MinimumSize = new Size(820, 520);
+            ClientSize = new Size(790, 490);
+            MinimumSize = new Size(820, 530);
             Controls.Add(EnleverStat);
             Controls.Add(AjouterStat);
             Controls.Add(comboBoxCreatures);
