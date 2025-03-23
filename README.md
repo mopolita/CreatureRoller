@@ -1,5 +1,8 @@
 # Générateur de Créatures 
 
+# Important !
+Ce projet est plus ou moins abandonné, mais je compte tenter de le reconstruire en C# avec MAUI et .NET 9.0 
+
 ## ℹ️ Général
 
 Une application portable permettant de générer les statistiques des monstres, créatures et humains du jeu de rôle l'appel de cthulhu (7è édition), en un seul clic.
